@@ -54,14 +54,6 @@ val kata : String = "Halo"
 val kalimat : String = "Ini adalah contoh kalimat."
 ```
 
-Contoh memanfaatkan **indexing** pada string sebagai berikut.
-```
-fun main(){
-    val text = "Dicoding"
-    val
-}
-```
-
 #### Escaped String
 Escaped String memungkinkan kita untuk mengurangi ambiguitas nilai yang berada di dalam sebuah String. Contohnya seperti berikut ini.
 ```
