@@ -275,6 +275,20 @@ Dapat membuat Array dengan tipe data primitif dengan fungsi berikut ini.
 -   shortArrayOf() : ShortArray
 -   byteArrayOf() : ByteArray
 
+#### Multi-dimensional Array
+
+Multi-dimensional array adalah array yang memiliki lebih dari satu dimensi. Dalam Kotlin, multi-dimensional array dapat dibuat dengan menggunakan fungsi arrayOf(), seperti berikut ini.
+
+```kotlin
+val multiArray = arrayOf(arrayOf(1,2,3), arrayOf(4,5,6), arrayOf(7,8,9))
+```
+
+Ukuran dimensi harus konsisten agar semua elemen dapat diakses dengan benar. Berikut adalah contoh yang salah, tapi tidak menghasilkan error.
+
+```kotlin
+val multiArray = arrayOf(arrayOf<Any>(1,2,3,arrayOf(1,2)), arrayOf("asd",6), arrayOf(7,8,9))
+```
+
 ## Nullables Types
 
 NPE (NullPointerException) adalah sebuah error yang terjadi ketika program mencoba untuk mengakses sebuah variabel yang bernilai null. NPE dapat menyebabkan program crash atau berhenti berjalan. Hal ini dapat terjadi karena beberapa alasan, seperti:
