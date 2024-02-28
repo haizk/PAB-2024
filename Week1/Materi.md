@@ -283,10 +283,12 @@ Multi-dimensional array adalah array yang memiliki lebih dari satu dimensi. Dala
 val multiArray = arrayOf(arrayOf(1,2,3), arrayOf(4,5,6), arrayOf(7,8,9))
 ```
 
-Ukuran dimensi harus konsisten agar semua elemen dapat diakses dengan benar. Berikut adalah contoh yang salah, tapi tidak menghasilkan error.
+Ukuran dimensi harus konsisten agar semua elemen dapat diakses dengan benar. Berikut adalah contoh yang salah, tapi tidak menghasilkan error ketika inisisalisasi. Namun, akan menghasilkan error ketika diakses.
 
 ```kotlin
-val multiArray = arrayOf(arrayOf<Any>(1,2,3,arrayOf(1,2)), arrayOf("asd",6), arrayOf(7,8,9))
+var multiArray = arrayOf(arrayOf<Any>(1,2,3,arrayOf(1,2)), arrayOf("asd",6), arrayOf(7,8,9)) // no error
+
+print(multiArray[0][3][1]) // error
 ```
 
 ## Nullables Types
