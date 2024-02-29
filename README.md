@@ -10,6 +10,6 @@ https://developer.android.com/teach
 - Group 3: nisarizqi
 - Group 4: yulia-1030
 - Group 5:
-- Group 6:
+- Group 6: ningrom
 
 ![Bagian Buat Materi per RPS](https://i.ibb.co/GVdm3j6/Pembagian-Materi-Silabus.jpg)
