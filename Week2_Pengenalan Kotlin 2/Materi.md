@@ -247,7 +247,7 @@ fun main(){
 
 ### Properties
 
-Properti merupakan suatu hal yang pasti dimiliki oleh sebuah kelas dalam Kotlin. Pada kelas sebelumnya terdapat properti _name_. Properti merupakan sebuah variabel, dimana sebuah variabel dapat bernilai **_mutable_ (var)** atau **_read-only_ (val)**.
+Properti merupakan suatu hal yang pasti dimiliki oleh sebuah kelas dalam Kotlin. Pada kelas sebelumnya terdapat properti _name_. Properti merupakan sebuah variabel, dimana sebuah variabel dapat bernilai **_mutable_ (`var`)** atau **_read-only_ (`val`)**.
 
 Pada dasarnya, sebuah variabel yang bernilai _mutable_ pada Kotlin akan memiliki fungsi _setter_ dan _getter_. Sedangkan variabel yang bernilai _read-only_ hanya akan memiliki fungsi _getter_. Namun, kita dapat melakukan _overrride_ kedua fungsi tersebut untuk dapat membuatnya secara manual.
 
@@ -297,7 +297,7 @@ Lateinit dan Lazy Property digunakan ketika kita tidak ingin menginialisasi nila
 
 #### Lateinit Property
 
-Lateinit property hanya bisa digunakan ketika disandingkan dengan **var**. Jika variabel akan digunaknan, variabel harus diinialisasi terlebih dahulu atau akan menyebabkan error. 
+Lateinit property hanya bisa digunakan ketika disandingkan dengan **`var`**. Jika variabel akan digunaknan, variabel harus diinialisasi terlebih dahulu atau akan menyebabkan error. 
 
 ```
 lateinit property [property name] has not been initialized
@@ -332,7 +332,7 @@ Kita juga dapat melakukan pengecekan apakah variabel sudah terinisialisasi atauk
 
 #### Lazy Property
 
-Berkebalikan dengan _lateinit_, penggunaan _lazy property_ harus disandingkan dengan **val**. Hal ini dikarenakan _lazy property_ hanya dapat diinialisasi sebanyak 1 kali.
+Berkebalikan dengan _lateinit_, penggunaan _lazy property_ harus disandingkan dengan **`val`**. Hal ini dikarenakan _lazy property_ hanya dapat diinialisasi sebanyak 1 kali.
 
 ```kotlin
 val angkatan : String by lazy { 
@@ -365,7 +365,7 @@ class Movie(genre: String = "Action")
 
 #### **Init Block**
 
-Dalam Kotlin, terdapat _**init** block_ yang memungkinkan kita untuk menuliskan _property_ dalam _body class_ ketika kita menginialisasi kelas tersebut. Blok **init** juga memiliki fungsi lain, yaitu membantu kita melakukan **validasi** nilai terhadap properti tersebut sebelum diinialisasi.
+Dalam Kotlin, terdapat **`init`** _block_ yang memungkinkan kita untuk menuliskan _property_ dalam _body class_ ketika kita menginialisasi kelas tersebut. Blok **`init`** juga memiliki fungsi lain, yaitu membantu kita melakukan **validasi** nilai terhadap properti tersebut sebelum diinialisasi.
 
 ```kotlin
 class Movie(genre: String = "Action", duration: Int){
@@ -433,34 +433,474 @@ fun main() {
 Jika kita tidak membuat sebuah _constructor_ secara manual, maka Kotlin akan secara otomatis membuat sebuah **_default constructor_** pada kelas tersebut.
 
 ### Visibility Modifiers
+Hak akses suatu properti dalam Kotlin dapat kita tentukan sesuai sesuai kebutuhan. Dengan menentukan hak akses pada sebuah kelas, akses data dapat kita batasi. Dengan menentukan hak akses atau _visibility modifiers_, kita telah menerapkan salah satu pilar dalam OOP yaitu **_encapsulation_**  
 
+Terdapat berbagai macam hak akses pada kotlin, yaitu 
+- Public    : Dapat diakses dari **kelas manapun**.
+- Private   : Hanya dapat diakses oleh properti pada **_scope_ yang sama**.
+- Protected : Hanya dapat diakses oleh properti pada **kelas turunannya atau kelas itu sendiri**.
+- Internal  : Hanya dapat diakses oleh properti yang **berada pada modul yang sama (satu modul)**.
+
+```kotlin
+class Number {
+    private var angkaPrivate: Int = 10 // Variabel dengan hak akses private
+    var angkaPublic: Int = 20 // Variabel dengan hak akses public
+    protected var angkaProtected: Int = 30 // Variabel dengan hak akses protected
+    internal var angkaInternal: Int = 40 // Variabel dengan hak akses internal
+
+    // Fungsi untuk menampilkan nilai
+    fun tampilkanNilai() {
+        println("Nilai angkaPrivate (private): $angkaPrivate")
+        println("Nilai angkaPublic (public): $angkaPublic")
+        println("Nilai angkaProtected (protected): $angkaProtected")
+        println("Nilai angkaInternal (internal): $angkaInternal")
+    }
+}
+
+fun main() {
+    val contoh = Number()
+
+    // Kita bisa mengakses angkaPublic dan angkaInternal dari luar kelas
+    println("Dari luar kelas:")
+    println("Nilai angkaPublic (public): ${contoh.angkaPublic}")
+    // println("Nilai angkaPrivate (private): ${contoh.angkaPrivate}") // Ini akan menghasilkan error karena angkaPrivate adalah private
+    // println("Nilai angkaProtected (protected): ${contoh.angkaProtected}") // Ini akan menghasilkan error karena angkaProtected tidak dapat diakses secara langsung dari luar kelas
+    println("Nilai angkaInternal (internal): ${contoh.angkaInternal}")
+
+    // Kita juga bisa memanggil method yang menggunakan angkaPrivate, angkaPublic, angkaProtected, dan angkaInternal di dalamnya
+    println("\nMemanggil method tampilkanNilai() dari luar kelas:")
+    contoh.tampilkanNilai()
+}
+
+// Output
+// Dari luar kelas:
+// Nilai angkaPublic (public): 20
+// Nilai angkaInternal (internal): 40
+
+// Memanggil method tampilkanNilai() dari luar kelas:
+// Nilai angkaPrivate (private): 10
+// Nilai angkaPublic (public): 20
+// Nilai angkaProtected (protected): 30
+// Nilai angkaInternal (internal): 40
+```
 
 ### Overloading
+Overloading merupakan penerapan dari salah satu pilar OOP yaitu _**polymorphism**_. Dengan overloading, kita dapat mendefinisikan **beberapa fungsi atau _constructor_ dengan nama yang sama pada satu kelas, tetapi dengan parameter yang berbeda**. Hal ini memungkinkan kita untuk beberapa versi dari fungsi yang melakukan tugas yang sama tetapi dengan jenis atau jumlah argumen yang berbeda.
 
+Konsep overloading ini sangat berguna atau _powerful_ dalam pembuatan program kalkulator.
+
+```kotlin
+class MathOperations {
+    // Fungsi untuk menjumlahkan dua bilangan bulat
+    fun jumlah(a: Int, b: Int): Int {
+        return a + b
+    }
+
+    // Overloaded function to add three integers
+    // Fungsi overload untuk menjumlahkan tiga bilangan bulat
+    fun jumlah(a: Int, b: Int, c: Int): Int {
+        return a + b + c
+    }
+
+    // Overloaded function to add two doubles
+    // Fungsi overload untuk menjumlahkan dua bilangan double
+    fun jumlah(a: Double, b: Double): Double {
+        return a + b
+    }
+}
+
+fun main() {
+    val operasi = MathOperations()
+
+    // Memanggil fungsi jumlah dengan dua argumen integer
+    val hasil1 = operasi.jumlah(5, 3)
+    println("Hasil penjumlahan dari dua bilangan integer: $hasil1")
+
+    // Memanggil fungsi jumlah dengan tiga argumen integer
+    val hasil2 = operasi.jumlah(2, 4, 6)
+    println("Hasil penjumlahan dari tiga bilangan integer: $hasil2")
+
+    // Memanggil fungsi jumlah dengan dua argumen double
+    val hasil3 = operasi.jumlah(2.5, 3.5)
+    println("Hasil penjumlahan dari dua bilangan double: $hasil3")
+}
+
+// Output
+// Hasil penjumlahan dari dua bilangan integer: 8
+// Hasil penjumlahan dari tiga bilangan integer: 12
+// Hasil penjumlahan dari dua bilangan double: 6.0
+```
 
 ### Inheritances
+Inheritance atau pewarisan adalah salah satu pilar yang ada dalam 4 pilar OOP. Dengan menerapkan _inheritance_, kita dapat menghemat kode dan meminimalisir terjadinya _boilerplate_ pada kode yang kita buat.
 
+```kotlin
+// diberi "open" agar dapat dilakukan inheritance/pewarisan
+open class Fish(){
+
+    var name = "Kio"
+
+    open fun eat(){
+        println("$name is Eating!")
+    }
+
+    open fun sleep(){
+        println("Sleepy...zzz")
+    }
+
+}
+
+class Shark(name: String) : Fish() {
+
+    init {
+        super.name = name
+    }
+
+    override fun eat(){
+        println("Yumm... $name is eating lots of fishes")
+    }
+
+    override fun sleep(){
+        println("$name is sleeping underwater...")
+    }
+
+    fun swim(){
+        println("$name is exploring the sea!!")
+    }
+
+}
+
+fun main() {
+    val shark = Shark("Rhoa")
+    shark.eat()  
+    shark.sleep()  
+    shark.swim()
+}
+
+//  Output
+// Yumm... Rhoa is eating lots of fishes
+// Rhoa is sleeping underwater...
+// Rhoa is exploring the sea!!
+```
+
+#### Overriding
+Overriding adalah konsep dalam pemrograman berorientasi objek di mana kelas turunan (_subclass_) dapat **mengganti implementasi metode yang sama** dari kelas dasar (_superclass_). Dalam Kotlin, Anda menggunakan kata kunci **`override`** sebelum metode yang ingin Anda ganti. Ini memungkinkan kelas turunan menyediakan perilaku khusus yang sesuai dengan kebutuhan kelas tersebut. Penting untuk memperhatikan bahwa nama, tipe, dan parameter metode harus cocok persis dengan metode yang ingin dioverride di kelas dasar.
+
+```kotlin
+override fun eat(){
+    println("Yumm... $name is eating lots of fishes")
+}
+```
 
 ### Abstract Class
+Abstract class adalah sebuah kelas yang **tidak dapat diinstansiasi secara langsung** dan dapat memiliki metode abstrak (_abstract method_). Metode abstrak adalah metode yang tidak memiliki implementasi di dalam kelas abstrak, tetapi harus diimplementasikan oleh kelas turunannya (_subclass_). Abstraksi digunakan ketika kita ingin memiliki kelas dasar yang menyediakan kerangka kerja umum, tetapi membiarkan detail implementasi khusus ditentukan oleh kelas turunannya.
 
+```kotlin
+abstract class Vehicle {
+    abstract fun start()
+
+    abstract fun stop()
+
+    fun accelerate() {
+        println("Accelerating...")
+    }
+}
+
+class Motorcycle : Vehicle() {
+    override fun start() {
+        println("Motorcycle started")
+    }
+
+    override fun stop() {
+        println("Motorcycle stopped")
+    }
+}
+
+fun main() {
+
+    val motorcycle = Motorcycle()
+    motorcycle.start() 
+    motorcycle.accelerate() 
+    motorcycle.stop() 
+}
+
+// Output
+// Motorcycle started
+// Accelerating...
+// Motorcycle stopped
+```
 
 ### Interfaces
+Interface adalah konsep mengenai sifat umum yang akan digunakan oleh suatu kelas untuk memiliki sifat tersebut. Interface sangat mirip dengan _abstract class_, namun tanpa sebuah properti deklarasi dan fungsi yang dideklarasikan tanpa isi. Interface bertujuan untuk diimplementasikan oleh sebuah kelas. Pengimplementasian _interface_ pada sebuah kelas **harus meng-_override_ seluruh properti dan fungsi** sekaligus memberikan definisi terhadap isi fungsi yang terdapat dalam _interface_ tersebut.
 
+```kotlin
+interface Shape {
+    val area: Double
+    
+    fun calculateArea(): Double
+}
+
+// Kelas Circle yang mewarisi dari interface Shape
+class Circle(val radius: Double) : Shape {
+    // Implementasi properti area dari interface Shape
+    override val area: Double
+        get() = Math.PI * radius * radius
+    
+    // Implementasi metode calculateArea dari interface Shape
+    override fun calculateArea(): Double {
+        return Math.PI * radius * radius
+    }
+}
+
+fun main() {
+    val circle = Circle(5.0)
+    println("Area of the circle: ${circle.calculateArea()}")
+
+}
+
+// Output
+// Area of the circle: 78.53981633974483
+```
 
 ### Extensions
 
+Pada Kotlin, kita dimungkinkan untuk menambahkan fungsi baru pada sebuah kelas tanpa harus mewarisi kelas tersebut. Terdapat 2 jenis _extensions_ yang didukung oleh Kotlin, yaitu **Extension Function** dan **Extension Properties**.
+
+#### Extension Function
+Extension function berfungsi untuk **menambahkan fungsi baru**. Extension Function dideklarasikan dengan menentukan terlebih dahulu _receiver type_, kemudian nama fungsi yang dipisahkan oleh tanda titik (.). 
+
+```kotlin
+fun Int.dollarToRupiah(): String {
+    val rupiah = this * 15700
+    return "Rp.$rupiah"
+}
+
+fun main() {
+    val price = 15
+    println("Harga dalam Rupiah: ${price.dollarToRupiah()}") 
+}
+
+// Output
+// Harga dalam Rupiah: Rp.235500
+```
+
+#### Extension Property
+Selain menambah fungsi baru, Kotlin juga mendukung extension untuk menambah sebuah properti baru pada sebuah kelas tanpa harus menyentuh kode di dalam kelas tersebut. Cara pendeklarasiannya pun sama seperti _extension function_, kita perlu menentukan terlebih dahulu _receiver type_, kemudian nama properti yang dipisahkan oleh tanda titik (.). 
+
+```kotlin
+val String.lengthWithSpaces: Int
+    get() = this.length + this.count { it == ' ' }
+
+fun main() { 
+    val text = "Hello World"
+    println("Panjang string termasuk spasi: ${text.lengthWithSpaces}")
+}
+
+// Output
+// Panjang string termasuk spasi: 12
+```
 
 ### Exception
+
+Exception adalah suatu kondisi abnormal atau kejadian yang tidak diharapkan yang terjadi saat program sedang berjalan. Ketika exception terjadi, program biasanya akan berhenti atau mengalami gangguan jika tidak ditangani dengan benar. Penanganan exception memungkinkan program untuk merespons dengan baik terhadap kesalahan dan melanjutkan eksekusi program dengan normal.
+
+Dalam Kotlin, exception diwakili oleh kelas-kelas yang mewarisi dari kelas _Throwable_, baik itu kelas bawaan seperti _Exception_, _RuntimeException_, atau kelas buatan pengguna. Kotlin menggunakan blok `try`, `catch`, dan `finally` untuk menangani exception.
+
+```kotlin
+fun divide(a: Int, b: Int): Int {
+    return a / b
+}
+
+fun main() {
+    try {
+        val result = divide(10, 0)
+        println("Hasil pembagian: $result") // Baris ini tidak akan pernah dijalankan
+    } catch (e: ArithmeticException) {
+        println("Terjadi kesalahan: ${e.message}") // Menampilkan pesan kesalahan
+    } finally {
+        println("Proses selesai") // Selalu dijalankan, terlepas dari exception atau tidak
+    }
+}
+
+// Output
+// Terjadi kesalahan: / by zero
+// Proses selesai
+```
 
 <br/>
 
 ## 3. Special Class
 
+Special Class adalah yang memiliki fitur atau **karakteristik tertentu** yang tidak tersedia di _class_ biasa (reguler). 
+
+Beberapa _special class_ dalam Kotlin telah kita pelajari sebelumnya, yaitu Abstract Class dan Interface. Selain itu, terdapat berbagai macam _special class_ lain, yaitu :
+- Data Class    : Class yang digunakan untuk menyimpan data.
+- [Nested Class](https://kotlinlang.org/docs/nested-classes.html)   : membuat Class di dalam Class tanpa akses ke kelas induk.
+- [Inner Class](https://kotlinlang.org/docs/nested-classes.html#inner-classes) : membuat Class di dalam Class dengan akses ke kelas induk.
+- Enum Class : tipe data dengan sekumpulan nilai konstan yang telah ditentukan.
+- [Sealed Class](https://kotlinlang.org/docs/sealed-classes.html) : digunakan untuk pembatasan hierarki class.
+
+### Data Class
+
+
+
+```kotlin
+
+```
+
+### Enum Class
+
+
+
+```kotlin
+
+```
 
 <br/>
 
 ## 4. Collections
 
+_Collections_ digunakan untuk menyimpan dan memanipulasi kelompok objek atau data. Terdapat dua jenis _collections_, yaitu `mutable` dan `immutable`. _Collections_ yang bersifat **_mutable_ dapat diubah** nilainya, sedangkan _collections_ yang bersifat **_immutable_** tidak dapat diubah nilainya atau bersifat **_read-only_**. Terdapat berbagai macam collections pada Kotlin, yaitu : 
+- List
+- Set
+- Map
+
+### List
+
+List adalah kumpulan elemen terurut yang dapat berisi duplikat. Elemen-elemennya dapat diakses menggunakan indeks.
+
+#### Mutable List
+
+```kotlin
+fun main() {
+    val mutableList = mutableListOf(1, 2, 3, 4, 5)
+    println("Mutable List: $mutableList")
+
+    mutableList.add(6)
+    mutableList.removeAt(1)
+    mutableList[2] = 10
+
+    println("Modified Mutable List: $mutableList")
+}
+
+// Output
+// Mutable List: [1, 2, 3, 4, 5]
+// Modified Mutable List: [1, 3, 10, 5, 6]
+```
+
+#### Immutable List
+
+```kotlin
+fun main() {
+    // Immutable List
+    val immutableList = listOf(1, 2, 3, 4, 5)
+    println("Immutable List: $immutableList")
+}
+
+// Output
+// Immutable List: [1, 2, 3, 4, 5]
+```
+
+### Set
+
+Set adalah kumpulan elemen yang tidak terurut dan tidak boleh memiliki duplikat. 
+
+#### Mutable Set
+
+```kotlin
+fun main() {
+    // Mutable Set
+    val mutableSet = mutableSetOf(1, 2, 3, 4, 5)
+    println("Mutable Set: $mutableSet")
+
+    mutableSet.add(6)
+    mutableSet.remove(3)
+
+    println("Modified Mutable Set: $mutableSet")
+}
+
+// Output
+// Mutable Set: [1, 2, 3, 4, 5]
+// Modified Mutable Set: [1, 2, 4, 5, 6]
+```
+
+#### Immutable Set
+
+```kotlin
+fun main() {
+    // Immutable Set
+    val immutableSet = setOf(1, 2, 3, 4, 5)
+    println("Immutable Set: $immutableSet")
+}
+
+// Output
+// Immutable Set: [1, 2, 3, 4, 5]
+```
+
+### Map
+
+Map adalah kumpulan pasangan kunci-nilai di mana setiap kunci unik dan memiliki nilai yang terkait.
+
+#### Mutable Map
+
+```kotlin
+fun main() {
+    // Mutable Map
+    val mutableMap = mutableMapOf("one" to 1, "two" to 2, "three" to 3)
+    println("Mutable Map: $mutableMap")
+
+    mutableMap["four"] = 4
+    mutableMap.remove("two")
+    mutableMap["three"] = 30
+
+    println("Modified Mutable Map: $mutableMap")
+}
+
+// Output
+// Mutable Map: {one=1, two=2, three=3}
+// Modified Mutable Map: {one=1, three=30, four=4}
+```
+
+#### Immutable Map
+
+```kotlin
+fun main() {
+    // Immutable Map
+    val immutableMap = mapOf("one" to 1, "two" to 2, "three" to 3)
+    println("Immutable Map: $immutableMap")
+}
+
+// Output
+// Immutable Map: {one=1, two=2, three=3}
+```
+
+### Kotlin Collections
+Kotlin Collections juga memiliki berbagai fungsi operasi yang dapat digunakan untuk mengakses data didalamnya, diantaranya : 
+
+| Operasi | Fungsi |
+|---------|---------|
+| filter() | Mengembalikan koleksi yang berisi elemen-elemen yang memenuhi kondisi tertentu.  | 
+| filterNot() | Mengembalikan koleksi yang berisi elemen-elemen yang tidak memenuhi kondisi tertentu.  |
+| map() | Mengubah setiap elemen dalam koleksi menjadi elemen baru sesuai dengan transformasi yang diberikan.  | 
+| count() | Menghitung jumlah elemen dalam koleksi yang memenuhi kondisi tertentu.  |
+| find() | Mengembalikan elemen pertama dalam koleksi yang memenuhi kondisi tertentu, atau _null_ jika tidak ada yang cocok.  | 
+| firstOrNull() | Mengembalikan elemen pertama dalam koleksi, atau null jika koleksi kosong.  |
+| lastOrNull() | Mengembalikan elemen terakhir dalam koleksi, atau null jika koleksi kosong.  | 
+| first() | Mengembalikan elemen pertama dalam koleksi.  |
+| last() | Mengembalikan elemen terakhir dalam koleksi.  | 
+| sum() | Menghitung total nilai dari elemen-elemen dalam koleksi.  |
+| sorted() | Mengurutkan elemen-elemen dalam koleksi.  | 
+| fold() | Menggabungkan elemen-elemen koleksi dengan nilai awal tertentu menggunakan operasi yang ditentukan.  |
+| foldRight() | Mirip dengan `fold()`, namun prosesnya dimulai dari elemen terakhir hingga elemen pertama.  | 
+| drop() | Menghapus sejumlah elemen pertama dari koleksi dan mengembalikan sisanya.  |
+| dropLast() | Menghapus sejumlah elemen terakhir dari koleksi dan mengembalikan sisanya.  | 
+| slice() | Mengambil sebagian elemen dari koleksi berdasarkan indeks yang ditentukan.  |
+| distinct() | Menghapus duplikat dari koleksi dan mengembalikan elemen-elemen unik.  | 
+| distinctBy() | Menghapus duplikat berdasarkan kriteria tertentu dari koleksi dan mengembalikan elemen-elemen unik.  |
+| chunked() | Membagi koleksi menjadi bagian-bagian dengan ukuran tertentu.  | 
+
+
+*Contoh kode* dapat dilihat pada file `operations.kt`.
 
 <br/>
 
