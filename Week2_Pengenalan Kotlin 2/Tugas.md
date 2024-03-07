@@ -1,5 +1,5 @@
 # Tugas  Praktikum PAB (Week 2)
-#### Buatlah program dalam bahasa Kotlin dimana program tersebut wajib mengimplementasikan berikut ini.
+#### Buatlah **sebuah program** dalam bahasa Kotlin dimana program tersebut wajib mengimplementasikan berikut ini.
 
     1. Control Flow (minimal 2 jenis)
     2. Inheritance
@@ -14,6 +14,8 @@
     3. Operasi pada Collections (seperti pada file `operations.kt`)
     4. Member Reference 
     5. Kotlin Generics
+
+Note : Jika terdapat kesulitan ketika membuat source code dalam beberapa files, source code dapat digabung menjadi satu file saja
 
 #### Template Source Code untuk Praktikum Week 2
 ```
