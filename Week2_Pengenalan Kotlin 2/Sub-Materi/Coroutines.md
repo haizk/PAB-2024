@@ -14,22 +14,15 @@ Paralelisme dalam Kotlin dapat dicapai dengan menggunakan konsep konkurensi dan 
 Coroutines sering disebut sebagai "thread yang ringan" karena mereka lebih efisien dalam penggunaan sumber daya daripada thread tradisional, memungkinkan jutaan coroutines berjalan pada beberapa thread. Meskipun memiliki life cycle yang mirip dengan thread, coroutines lebih mudah diterapkan dan lebih powerful, terutama di lingkungan mobile di mana kinerja sangat krusial. Meskipun dijalankan di dalam thread, coroutines tidak terikat dengan thread tersebut, memungkinkan pengguna untuk mengatur jalannya coroutine, termasuk menentukan apakah akan dijalankan dalam thread tertentu atau ditangguhkan untuk dilanjutkan pada thread lainnya. Berikut ini contoh dari penggunaan coroutines.
 ```kotlin
 import kotlinx.coroutines.*
-
-fun main() {
-    // Membuat coroutine
-    val job = GlobalScope.launch {
-        delay(1000) // Menunda eksekusi selama 1 detik (tanpa menghalangi thread utama)
-        println("Coroutine selesai dijalankan")
+ 
+fun main() = runBlocking{
+    val coroutineLaunch = launch {
+        delay(1000L)
+        println("Executing Coroutines!")
     }
-
-    // Menunggu coroutine selesai
-    println("Menunggu coroutine selesai")
-    runBlocking {
-        job.join() // Menunggu coroutine selesai sebelum melanjutkan eksekusi
-    }
-    println("Coroutine telah selesai")
+    println("Hello, Coroutine World!")
+    delay(2000L)
 }
-
 ```
 
 ## Coroutines Builder
@@ -42,21 +35,35 @@ Coroutine builder adalah fungsi yang digunakan untuk membuat coroutine dalam Kot
 Misalkan kita ingin membuat sebuah aplikasi sederhana yang melakukan dua tugas secara asynchronous: mencetak "Hello" setelah 1 detik, dan mencetak "World" setelah 2 detik. Berikut contohnya:
 ```kotlin
 import kotlinx.coroutines.*
-
-fun main() {
-    GlobalScope.launch {
-        delay(1000)
-        println("Hello")
+import kotlin.system.measureTimeMillis
+ 
+fun main() = runBlocking {
+    val timeOne = measureTimeMillis {
+        val capital = getCapital()
+        val income = getIncome()
+        println("Your profit is ${income - capital}")
     }
-
-    GlobalScope.launch {
-        delay(2000)
-        println("World")
+ 
+    val timeTwo = measureTimeMillis {
+        val capital = async { getCapital() }
+        val income = async { getIncome() }
+        println("Your profit is ${income.await() - capital.await()}")
     }
-
-    Thread.sleep(3000) // Menunggu agar semua coroutines selesai sebelum aplikasi berakhir
+ 
+    println("Completed in $timeOne ms vs $timeTwo ms")
+ 
 }
 
+
+suspend fun getCapital(): Int {
+    delay(1000L)
+    return 50000
+}
+ 
+suspend fun getIncome(): Int {
+    delay(1000L)
+    return 75000
+}
 ```
 
 
@@ -68,45 +75,33 @@ Berikut adalah contoh sederhana menjalankan sebuah job dalam Kotlin menggunakan 
 ```kotlin
 import kotlinx.coroutines.*
 
-fun main() {
-    // Membuat job
-    val job = GlobalScope.launch {
-        println("Job sedang berjalan")
-        delay(1000)
-        println("Job selesai")
+fun main() = runBlocking {
+    val task = launch(start = CoroutineStart.LAZY) {
+        delay(1000L)
+        println("Starting a new task!")
     }
-    
-    // Menunggu job selesai
-    runBlocking {
-        job.join()
-    }
-
-    println("Semua job telah selesai")
+ 
+    task.start()
+    println("Performing other task")
 }
 ```
 Berikut adalah contoh cara membatalkan sebuah job dalam Kotlin menggunakan coroutines:
 ```kotlin
 import kotlinx.coroutines.*
+import kotlin.coroutines.*
 
-fun main() {
-    // Membuat job
-    val job = GlobalScope.launch {
-        println("Job sedang berjalan")
-        delay(1000)
-        println("Job selesai")
+@InternalCoroutinesApi
+fun main() = runBlocking {
+    val task = launch {
+        delay(5000)
+        println("Start new task!")
     }
-    
-    // Membatalkan job setelah 500 ms
-    GlobalScope.launch {
-        delay(500)
-        println("Membatalkan job")
-        job.cancel()
-    }
-    
-    // Menunggu job selesai
-    runBlocking {
-        job.join()
-        println("Semua job telah selesai")
+ 
+    delay(2000)
+    task.cancel(cause = CancellationException("Time is up!"))
+    println("Cancelling task...")
+    if (task.isCancelled){
+        println("Task is cancelled because ${task.getCancellationException().message}")
     }
 }
 ```
