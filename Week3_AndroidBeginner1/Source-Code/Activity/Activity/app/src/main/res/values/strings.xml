@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BeamVolume</string>
+    <string name="beam_volume">Beam Volume</string>
+    <string name="length">Length</string>
+    <string name="height">Height</string>
+    <string name="width">Width</string>
+    <string name="calculate">Calculate</string>
+    <string name="result">Result</string>
+</resources>
