@@ -16,7 +16,7 @@
 
     ![alt text](kerangka-interface.png)
 
-### Demo Tugas
+### Demo Final Aplikasi
 ![alt text](demo-tugas.gif)
 
 ### Tips and Tricks
