@@ -1,5 +1,5 @@
 # Tugas  Praktikum PAB (Week 3)
-### Buatlah **sebuah program** dalam bahasa Kotlin dimana program tersebut wajib mengimplementasikan fitur-fitur berikut ini.
+### Buatlah **sebuah aplikasi android** dengan bahasa Kotlin dimana aplikasi tersebut wajib mengimplementasikan fitur-fitur berikut ini.
 
     1. 2 Activity, sudah termasuk Main Activity
     2. Explicit Intent
