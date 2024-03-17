@@ -8,7 +8,7 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 2. Kemudian, ditampilkan seperti di bawah ini. Dikarenkakan kita hanya membuat **basic project** saja maka kalian bisa memilih yang **Empty View Activity**. Kemudian, bisa klik **Next**.
 
-  ![alt text](assets/1.png)
+  ![aset negara](assets/1.png)
 
 3. Maka, akan ditampilkan window seperti berikut ini. Untuk **nama**, **Language**, **Minimum SDK**, dan **Build configuration language** bisa mengikuti seperti pada gambar, sedangkan untuk package bisa disesuaikan dengan format berikut ini: 
 
