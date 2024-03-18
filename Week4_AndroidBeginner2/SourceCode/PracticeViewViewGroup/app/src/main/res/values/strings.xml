@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Practice-View&amp;ViewGroup</string>
+    <string name="pisang_ijo">Pisang Ijo</string>
+    <string name="content_text">Es pisang ijo merupakan salah satu camilan atau jajanan khas Makassar yang populer hingga ke berbagai kota Indonesia. Saking populernya hingga ada franchise jajanan manis ini dalam bentuk gerai.Sesuai dengan namanya, jajanan ini berupa es yang terdiri dari pisang dibalut adonan hijau. Dipotong dan disajikan dengan bubur sumsum, kuah santan dan sirop merah serta es.</string>
+    <string name="content_specs_display">
+        1. Pisang Ijo: Taruh dalam wadah, tepung beras,
+        tepung kanji, gula, air daun suji dan santan. Aduk
+        hingga larut dan licin.
+        2. Masak di atas api kecil sambil aduk-aduk hingga
+        kental dan matang.
+        3. Angkat dan dinginkan.
+        4. Ambil 2-3 sdm adonan, ratakan di atas selembar
+        daun pisang atau plastik tebal.
+        5. Beri sepotong pisang di tengahnya. Balut seluruh
+        pisang hingga bentuknya mirip pisang.
+        6. Taruh di atas kukusan yang sudah dialasi daun,
+        Kukus selama 30 menit hingga matang.
+        7. Angkat dan dinginkan.
+        8. Bubur: Taruh tepung beras, santan, akstrak
+        pandan dan garam dalam panci, aduk hingga larut.
+        9. Masak di atas api sedang, aduk-aduk hingga
+        kental dan matang.
+        10. Angkat dan dinginkan.
+        11. Penyajian : Potong-potong pisang ijo
+        melintang, taruh di mangkuk saji.
+        12. Beri bubur, santan, sirop merah dan es batu.
+        Sajikan dingin.
+    </string>
+    <string name="title">Pisang Ijo ide takjil berbuka puasa</string>
+    <string name="menu">Cara membuat Pisang Ijo</string>
+    <string name="writer">Ditulis oleh</string>
+    <string name="my_name">Blacky</string>
+    <string name="share">Share</string>
+    <string name="how_to"> Cara Membuat Es Pisang Ijo</string>
+    <string name="ingredient"> Bahan</string>
+    <string name="banana" >Pisang Ijo:</string>
+    <string name="ingredient_banana">
+        - 200 g tepung beras.
+        - 1 sdm tepung kanji
+        - 50 g gula pasir
+        - 2 sdm air daun suji pandan
+        - 400 ml santan encer
+        - 6 buah pisang kepok/tanduk/raja sereh,
+        kupas.
+        -daun pisang/plastik tebal
+    </string>
+    <string name="pure" >Bubur:</string>
+
+    <string name="ingredient_pure">
+        - 100 g tepung beras
+        - 750 ml santan segar yang
+        sedang kentalnya
+        - 1 lembar daun pandan
+        - 1/2 sdt garam
+    </string>
+    <string name="complement">Pelengkap:</string>
+    
+    <string name="ingredient_complement" >
+        - Santan yang sudah direbus
+        - Sirop Merah Pisang Ambon
+        - Es Batu
+    </string>
+</resources>
