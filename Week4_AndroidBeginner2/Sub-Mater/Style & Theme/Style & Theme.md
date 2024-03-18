@@ -59,9 +59,9 @@ Nama dari item attribut adalah nama atribut yang ingin didefinisikan, sedangkan 
 
 -  *Theme* adalah kumpulan atribut yang diterapkan ke seluruh aplikasi, aktivitas atau hirarki tampilan. Saat kalian menerapkan *Theme*, maka setiap tampilan aplikasi atau aktivitas akan menerapkan atribut tema yang didukungnya. *Style* dan *theme* dideklarasikan di dalam file **themes.xml** dan **AndroidManifest.xml**. *Theme* juga dapat menerapkan *Style* pada elemen non-view, seperti *status bar* atau *window background*.
 
-![style&theme](style&theme.png)
+![style&theme](assets/style&theme.png)
 
-*Dua tema yang diaplikasikan pada aktivitas yang sama*
+*Dua tema yang diaplikasikan pada aktivitas yang sama*.
 
 Berikut adalah pendeklarasian dari *theme* pada file themes.xml 
 
@@ -81,4 +81,29 @@ Berikut adalah pendeklarasian dari *theme* pada file themes.xml
 
 Kode di atas dapat dimanipulasi atau diubah *theme* nya sesuai kebutuhan. Apabila kalian ingin mengubah warna, tipografi, atau shape secara keseluruhan, cukup mengubah pada file tersebut. Contohnya menghidupkan komentar dalam warna **colorPrimary**.
 
-![ClrPri](assets/ClrPri.png)
+![exthm](assets/exthm.png)
+
+*Contoh penerapan colorPrimary sebelum dan sesudah*.
+
+Terdapat perbedaan pada atribut **parent** dalam theme, ini dikarenakan theme mewarisi *style*(termasuk atribut di dalamnya) yang telah ada, umumnya bawaan dari sdk ataupun platform.
+```xml
+parent="Theme.Material3.DayNight.NoActionBar"
+```
+
+Dalam kasus di atas, project Android Studio menggunakan Material Design 3 sehingga aplikasi akan mewarisi design yang ada dalam Material 3. Salah satu contohnya adalah NoActionBar, artinya theme dari aplikasi tidak akan memunculkan ActionBar. Untuk memunculkan ActionBar dalam theme aplikasi, Anda cukup menghapus **.NoActionBar** pada bagian parent tersebut.
+
+```xml
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <!-- Base application theme. -->
+  <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight">
+      <!-- Customize your light theme here. -->
+      <item name="colorPrimary">#009688</item>
+  </style>
+ 
+  <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+  
+  ...
+</resources>
+```
+
+![ActBar](assets/AcrBar.jpg)
