@@ -27,7 +27,7 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 ```xml
 <resources>
-    <string name="app_name">Practice-View&amp;ViewGroup</string>
+    <string name="app_name">MyRecipe</string>
     <string name="pisang_ijo">Pisang Ijo</string>
     <string name="content_text">Es pisang ijo merupakan salah satu camilan atau jajanan khas Makassar yang populer hingga ke berbagai kota Indonesia. Saking populernya hingga ada franchise jajanan manis ini dalam bentuk gerai.Sesuai dengan namanya, jajanan ini berupa es yang terdiri dari pisang dibalut adonan hijau. Dipotong dan disajikan dengan bubur sumsum, kuah santan dan sirop merah serta es.</string>
     <string name="content_specs_display">
@@ -544,9 +544,9 @@ Sesuai dengan sifat **RelativeLayout** yang fleksibel sehingga kode diatas posis
 </ScrollView>
 ```
 
-**Tampilan akhir dari latihan ini**
+**Tampilan akhir dari latihan ini ketika aplikasi dijalankan**
 
-![alt text](assets/image.png)
+![alt text](assets/result-vvg.gif)
 
 *Apabila berhasil, maka aplikasi dapat digulir ke bawah dan ke atas.*
 
