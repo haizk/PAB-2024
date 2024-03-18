@@ -106,4 +106,4 @@ Dalam kasus di atas, project Android Studio menggunakan Material Design 3 sehing
 </resources>
 ```
 
-![ActBar](assets/AcrBar.jpg)
+![ActBar](assets/AcrBar.png)
