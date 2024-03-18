@@ -546,7 +546,7 @@ Sesuai dengan sifat **RelativeLayout** yang fleksibel sehingga kode diatas posis
 
 **Tampilan akhir dari latihan ini ketika aplikasi dijalankan**
 
-![alt text](assets/result.gif)
+![alt text](assets/result-vvg.gif)
 
 *Apabila berhasil, maka aplikasi dapat digulir ke bawah dan ke atas.*
 
