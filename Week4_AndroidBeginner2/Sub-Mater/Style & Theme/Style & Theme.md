@@ -81,7 +81,7 @@ Berikut adalah pendeklarasian dari *theme* pada file themes.xml
 
 Kode di atas dapat dimanipulasi atau diubah *theme* nya sesuai kebutuhan. Apabila kalian ingin mengubah warna, tipografi, atau shape secara keseluruhan, cukup mengubah pada file tersebut. Contohnya menghidupkan komentar dalam warna **colorPrimary**.
 
-![exthm](assets/exthm.png)
+![extheme](assets/extheme.png)
 
 *Contoh penerapan colorPrimary sebelum dan sesudah*.
 
@@ -106,7 +106,8 @@ Dalam kasus di atas, project Android Studio menggunakan Material Design 3 sehing
 </resources>
 ```
 
-  ![Act Bar](assets/AcrBar.png)
+  ![actionbBar](assets/actionBar.png)
+*Sebelum dan sesudah menggunakan .NoactionBar*
 
 ##
 
