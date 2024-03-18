@@ -1,1 +1,84 @@
+# STYLE AND THEME
 
+Di Android *Style* dan *Theme* digunakan untuk mengubah tampilan berdasarkan kebutuhan pengguna. Dengan menerapkan *Style* dan *Theme* juga dapat mengurangi duplikasi kode dan menjadikan aplikasi kita lebih ringan dan responsif.
+
+-  Secara umum, *Style* adalah kombinasi beberapa atribut atau komponen yang dibutuhkan untuk mendefinisikan sebuah komponen view dan layar jendela (bisa activity maupun fragment) ditampilkan. Seperti **font color, font style, padding, margin, height, width, dan background_color**.
+Dengan adanya *Style* lebih memudahkan Developer dalam menuliskan kode, karena tidak harus ditulis berulang-ulang di banyak komponen atau atribut, cukup dengan mengubah di satu tempat saja. Dan untuk mengubahnya, *Style* berada pada file **themes.xml**.
+
+-  Sebagai contoh, kalian mempunyai TextView yang berisi berbagai atribut berikut.
+```xml
+<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="#4D000000"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:text="@string/pisang_ijo"
+                android:drawableStart="@drawable/ic_collections_white_18dp"
+/>
+```
+TextView di atas berguna untuk menampilkan konten dari detail informasi yang terdapat di keseluruhan aplikasi. Sangat tidak efektif jika kita melakukan copy paste dari satu layout xml ke layout xml lainnya. Kita dapat menyederhanakan hal tersebut menjadi:
+
+```xml
+<TextView
+                style="@style/TextContent.BodyMedium.White.MarginAll"
+                android:layout_gravity="bottom"
+                android:background="#4D000000"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:text="@string/pisang_ijo"
+                app:drawableStartCompat="@drawable/ic_collections_white_18dp"
+/>
+```
+Untuk atribut margin dapat dipindahkan menjadi sebuah style sendiri untuk textview tersebut dan dapat digunakan kembali untuk semua jenis obyek textview sejenis.
+
+## Aturan Penggunaan Styles
+
+1. Semua style yang dibuat harus berada dalam **tag resources**.
+
+2. Semua style yang ingin didefinisikan harus berada dalam **tag style**.
+```xml
+<style name="TitleStyle">
+```
+Nama dari **style** adalah nama **style** yang kalian buat. **Style** yang diwarisi dapat diubah dan ditambahkan atributnya dalam **style** baru yang  dibuat. Android sudah menyediakan beragam **style** yang bisa digunakan untuk berbagai tampilan.
+
+3. Semua atribut yang didefinisikan dalam sebuah style harus berada dalam **tag item.**
+```xml
+<item name="android:layout_width">match_parent</item>
+```
+
+Nama dari item attribut adalah nama atribut yang ingin didefinisikan, sedangkan **match_parent** adalah nilai dari atribut tersebut.
+
+##
+
+-  *Theme* adalah kumpulan atribut yang diterapkan ke seluruh aplikasi, aktivitas atau hirarki tampilan. Saat kalian menerapkan *Theme*, maka setiap tampilan aplikasi atau aktivitas akan menerapkan atribut tema yang didukungnya. *Style* dan *theme* dideklarasikan di dalam file **themes.xml** dan **AndroidManifest.xml**. *Theme* juga dapat menerapkan *Style* pada elemen non-view, seperti *status bar* atau *window background*.
+
+![style&theme](style&theme.png)
+
+*Dua tema yang diaplikasikan pada aktivitas yang sama*
+
+Berikut adalah pendeklarasian dari *theme* pada file themes.xml 
+
+```xml
+<resources xmlns:tools="http://schemas.android.com/tools">
+   <!-- Base application theme. -->
+   <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+       <!-- Customize your light theme here. -->
+       <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+   </style>
+ 
+   <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+ 
+   ...
+</resources>
+```
+
+Kode di atas dapat dimanipulasi atau diubah *theme* nya sesuai kebutuhan. Apabila kalian ingin mengubah warna, tipografi, atau shape secara keseluruhan, cukup mengubah pada file tersebut. Contohnya menghidupkan komentar dalam warna **colorPrimary**.
+
+![ClrPri](assets/ClrPri.png)
