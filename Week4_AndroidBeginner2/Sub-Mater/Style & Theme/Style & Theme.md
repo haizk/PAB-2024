@@ -106,4 +106,30 @@ Dalam kasus di atas, project Android Studio menggunakan Material Design 3 sehing
 </resources>
 ```
 
-![ActBar](assets/AcrBar.png)
+  ![Act Bar](assets/AcrBar.png)
+
+##
+
+Selain **primaryColor** terdapat beberapa konfigurasi warna-warna yang didukung oleh theme Material 3.
+
+  ![konf_color](assets/konf_color.jpeg)
+
+Berikut sedikit penjelasan dari masing-masing warna:
+  
+-  **Primary:** Warna utama yang menunjukkan brand dari suatu aplikasi. Biasa digunakan di banyak tempat, seperti Floating Action Button, tombol utama, state aktif pada Switch dan Radio Button.
+-  **Secondary:** Digunakan untuk komponen yang kurang menonjol seperti chip filter.
+-  **Tersier:** Digunakan untuk memberikan aksen warna yang kontras untuk menyeimbangkan warna primary dan secondary. Atau bisa juga digunakan untuk memberikan perhatian yang lebih tinggi pada suatu komponen.
+
+
+## Material Design
+Material Design adalah panduan desain dan sistem desain yang dikembangkan oleh Google untuk menyediakan panduan dan alat bagi para desainer dan pengembang untuk menciptakan pengalaman pengguna yang konsisten, intuitif, dan indah di berbagai platform dan perangkat.
+
+Semenjak menjadi Android Studio Flamingo, tema default Android adalah Material 3.  Material 3 adalah versi terbaru dari Material Design yang berisi panduan dalam merancang dan membangun tampilan aplikasi.
+
+Berikut di bawah ini adalah beberapa refrensi untuk theme, atribut dari Material 3 ataupun sumber refrensi lain.
+
+-  [Material 3 Design Kit](https://www.figma.com/community/file/1035203688168086460/material-3-design-kit)
+-  [Github Buttons Material 3](https://github.com/material-components/material-components-android/blob/master/docs/components/Button.md#text-label-attributes)
+-  [Common buttons - Material Design 3](https://m3.material.io/components/buttons/overview)
+-  [Color Hunt](https://colorhunt.co/)
+-  [Coolors](https://coolors.co/)
