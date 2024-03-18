@@ -133,3 +133,12 @@ Dan untuk selengkapnya Anda dapat melihat dan mempelajarinya pada tautan berikut
 - [ScrollView](https://developer.android.com/reference/android/widget/ScrollView.html)
 
 
+##
+Beberapa tautan berikut akan membantu untuk lebih memahami bagaimana aplikasi Anda dapat mendukung beragam ukuran perangkat Android:
+
+-    [Screen Density](https://developer.android.com/training/multiscreen/screendensities.html)
+- [DPI Screen](https://dpi.lv/)
+- [DP/PX Converter](https://www.pixplicity.com/dp-px-converter)
+- [Video Density-independent Pixels](https://www.youtube.com/watch?v=zhszwkcay2A)
+ 
+    
