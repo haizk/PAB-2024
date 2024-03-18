@@ -261,7 +261,7 @@ Pastikan Anda juga memperbarui kode dalam file **themes.xml (night)**.
 ```
 Dapat dilihat lagi bahwa setiap objek **TextView** menjadi lebih ringkas dan sederhana. Sebelum ke step selanjutnya kalian dapat menjalankan aplikasi.
 
-**6.** Dan terakhir karena tombol *button* masih berada pada kondisi default nya, ini dikarenakan *Buutton* tersebut mengikuti MAterial Design 3 dengan warna bawaan dari theme, yaitu abu-abu. Maka, perlu ditambahkan style nya, di dalam file **themes.xml**. 
+**6.** Dan terakhir karena tombol *button* masih berada pada kondisi default nya, ini dikarenakan *Button* tersebut mengikuti Material Design 3 dengan warna bawaan dari theme, yaitu abu-abu. Maka, perlu ditambahkan style nya, di dalam file **themes.xml**. 
 ```xml
 <style name="ButtonGeneral">
         <item name="android:layout_width">match_parent</item>
