@@ -544,9 +544,9 @@ Sesuai dengan sifat **RelativeLayout** yang fleksibel sehingga kode diatas posis
 </ScrollView>
 ```
 
-**Tampilan akhir dari latihan ini**
+**Tampilan akhir dari latihan ini ketika aplikasi dijalankan**
 
-![alt text](assets/image.png)
+![alt text](assets/result.gif)
 
 *Apabila berhasil, maka aplikasi dapat digulir ke bawah dan ke atas.*
 
