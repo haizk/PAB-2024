@@ -96,7 +96,7 @@ Kode diatas adalah variabel-variabel konstan berupa String yang ditulis agar tek
 
 2. Berikutnya, unduh asset-nya di bawah ini.
 
-   [alt text](assets/assets_view&viewgroup.zip)
+   [asset negara](assets/assets_view&viewgroup.zip)
 
 Lalu, ekstrak berkas tersebut dan salin semua asset yang dibutuhkan ke dalam direktori **res → drawable**. Pilih folder drawable untuk mendukung semua versi Android.
 
