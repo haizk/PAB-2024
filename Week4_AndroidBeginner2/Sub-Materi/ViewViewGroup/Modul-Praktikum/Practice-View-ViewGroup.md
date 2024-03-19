@@ -137,7 +137,7 @@ View dan viewgroup memiliki dua buah atribut penting yang harus selalu diberikan
     </LinearLayout>
 </ScrollView>
 ```
-Karena **ScrollView** hanya diperbolehkan 1 *parent* saja maka, pada kode diatas **ScrollView** hanya memiliki satu layout viewgroup sebagai root.
+Karena **ScrollView** hanya diperbolehkan 1 *parent* saja maka, pada kode diatas **ScrollView** hanya memiliki satu layout viewgroup sebagai root, yaitu **LinearLayout**.
 
 ##
 
