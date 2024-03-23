@@ -12,6 +12,12 @@
 
   *Demo di atas terlihat perubahan nya hanya dari warna, tetapi secara kode implementasinya telah meliputi **ConstraintLayout maupun Theme and Style***
 
+-  *Menggunakan ConstraintLayout*
+  ![alt_text](consLay.png)  
+  
+-  *Tidak menggunakan ConstraintLayout*
+  ![alt_text](LinLay.png)
+  
   ### Ketentuan Source Code Aplikasi
 1. Menggunakan Android Studio
 2. Menggunakan bahasa pemrograman Kotlin
