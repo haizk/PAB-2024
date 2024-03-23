@@ -34,6 +34,7 @@ PPAB-XX_NIM_Nama.zip
     xx = week praktikum
 
 ### Penilaian didasarkan pada: 
+
     1. Aplikasi Bebas dari error ketika dijalankan secara normal (10%)
     2. Relevansi source code dengan instruksi di atas (50%) 
     3. Kompleksitas Program yang dibuat (30%)
