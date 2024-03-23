@@ -35,7 +35,7 @@ PPAB-XX_NIM_Nama.zip
 
 ### Penilaian didasarkan pada: 
 
-    1. Aplikasi Bebas dari error ketika dijalankan secara normal (10%)
-    2. Relevansi source code dengan instruksi di atas (50%) 
-    3. Kompleksitas Program yang dibuat (30%)
-    4. Kreativitas masing-masing individu (10%). 
+  1. Aplikasi Bebas dari error ketika dijalankan secara normal (10%)
+  2. Relevansi source code dengan instruksi di atas (50%) 
+  3. Kompleksitas Program yang dibuat (30%)
+  4. Kreativitas masing-masing individu (10%). 
