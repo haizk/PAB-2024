@@ -8,7 +8,7 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 2. Kemudian, ditampilkan seperti di bawah ini. Dikarenkakan kita hanya membuat **basic project** saja maka kalian bisa memilih yang **Empty View Activity**. Kemudian, bisa klik **Next**.
 
-  ![aset negara](assets/1.png)
+  ![aset negara](assets/2.png)
 
 3. Maka, akan ditampilkan window seperti berikut ini. Untuk **nama**, **Language**, **Minimum SDK**, dan **Build configuration language** bisa mengikuti seperti pada gambar, sedangkan untuk package bisa disesuaikan dengan format berikut ini: 
 
@@ -96,7 +96,7 @@ Kode diatas adalah variabel-variabel konstan berupa String yang ditulis agar tek
 
 2. Berikutnya, unduh asset-nya di bawah ini.
 
-   [alt text](assets/assets_view&viewgroup.zip)
+   [asset negara](assets/assets_view&viewgroup.zip)
 
 Lalu, ekstrak berkas tersebut dan salin semua asset yang dibutuhkan ke dalam direktori **res → drawable**. Pilih folder drawable untuk mendukung semua versi Android.
 
@@ -137,7 +137,7 @@ View dan viewgroup memiliki dua buah atribut penting yang harus selalu diberikan
     </LinearLayout>
 </ScrollView>
 ```
-Karena **ScrollView** hanya diperbolehkan 1 *parent* saja maka, pada kode diatas **ScrollView** hanya memiliki satu layout viewgroup sebagai root.
+Karena **ScrollView** hanya diperbolehkan 1 *parent* saja maka, pada kode diatas **ScrollView** hanya memiliki satu layout viewgroup sebagai root, yaitu **LinearLayout**.
 
 ##
 
