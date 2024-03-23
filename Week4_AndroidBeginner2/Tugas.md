@@ -15,12 +15,12 @@
 2. Menggunakan bahasa pemrograman Kotlin
 3. Asisten akan menggunakan emulator dengan SDK level 30, maka pastikan saat build aplikasi, **gunakanlah Minimum SDK <= 30**
 
-### Detail Laporan Praktikum
+-  ### Detail Laporan Praktikum
 #### Laporan berisi screenshot source code dan tampilan user interface beserta penjelasannya disertai dengan kesimpulan. 
     
 Tugas dikumpulkan dalam bentuk .ZIP dengan format nama PPAB-04_NIM_Nama.zip yang berisi file laporan (.pdf) dan source code. Berikut struktur directory yang disarankan.
 
-PPAB-XX_NIM_Nama.zip
+    PPAB-XX_NIM_Nama.zip
     ├── sourcecode
     │   └── PPAB-XX_NIM_Nama
     │       └── NamaProject
