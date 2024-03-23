@@ -8,7 +8,9 @@
      
   Mendapatkan nilai tambahan jika mengimplementasikan >1 komponen Style 
 
-  //demotugas_nyusul
+  ![alt text](demo_tugas.gif)
+
+  *Demo di atas terlihat perubahan nya hanya dari warna, tetapi secara kode implementasinya telah meliputi **ConstraintLayout maupun Theme and Style***
 
   ### Ketentuan Source Code Aplikasi
 1. Menggunakan Android Studio
