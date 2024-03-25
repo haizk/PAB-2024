@@ -222,7 +222,6 @@ Ubah kode pada layout XML `item_row_cat` menjadi seperti berikut :
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
-    <?xml version="1.0" encoding="utf-8"?>
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
