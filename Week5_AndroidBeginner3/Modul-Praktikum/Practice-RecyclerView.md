@@ -151,7 +151,7 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 
 ### Mendownload _asset_
-Download _asset_ yang dibutuhkan pada praktikum kali ini melalui link [berikut](https://drive.google.com/file/d/17dHYpV4_1solrpp5Z3lO_68d-1bws_g4/view?usp=sharing).
+Download _asset_ yang dibutuhkan pada praktikum kali ini melalui link [berikut](https://drive.google.com/file/d/1EPxdCJ6yt-xm_PgdPaaWzkmfDmhDmGfB/view?usp=sharing).
 
 Kemudian, _extract file_ yang telah didownload.
 
