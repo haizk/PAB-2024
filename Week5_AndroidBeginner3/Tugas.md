@@ -1,6 +1,6 @@
 # Tugas Praktikum PAB (Week 5)
 
-### Buatlah sebuah aplikasi android dengan mengimplementasikan komponen -komponen di bawah ini.
+### Buatlah sebuah aplikasi android dengan mengimplementasikan komponen - komponen di bawah ini.
 
   1. Membuat Item Layout yang didalamnya terdapat gambar, judul, dan deskripsi secara singkat.
 
@@ -10,10 +10,10 @@
      
       Layout diatas **hanya contoh**, dapat dikustomisasi sesuai dengan kreativitas kalian.
 
-  2. Menerapkan RecyclerView sesuai modul praktikum dengan minimal data yang ditampilkan adalah 10.
+  2. Menerapkan RecyclerView sesuai modul praktikum dengan **minimal data** yang ditampilkan adalah **10**.
   3. Tema aplikasi **tidak boleh sama** dengan contoh pada modul praktikum
      
-  Mendapat **nilai tambahan** jika menerapkan fungsi _on click_ pada setiap item RecyclerView (aksi onClick bebas)
+  _Mendapat **nilai tambahan** jika menerapkan fungsi _on click_ pada setiap item RecyclerView (aksi onClick bebas)_
   
   ### Ketentuan Source Code Aplikasi
 1. Menggunakan Android Studio
