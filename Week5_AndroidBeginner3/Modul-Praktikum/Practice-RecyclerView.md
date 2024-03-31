@@ -921,4 +921,4 @@ Ketika menu "Grid" dijalankan, maka tampilan akan menjadi seperti ini
 
 **Note** : Agar _action bar_ tidak menutupi RecyclerView, kalian dapat menghapus fungsi `enableEdgeToEdge()`
 
-![alt-text](assets/Menambahkan-OnClick-Adapter/8.png)
+![alt-text](assets/Menambahkan-Onlick-Adapter/8.png)
