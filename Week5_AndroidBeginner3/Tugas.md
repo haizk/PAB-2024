@@ -10,7 +10,8 @@
      
       Layout diatas **hanya contoh**, dapat dikustomisasi sesuai dengan kreativitas kalian.
 
-  3. Menerapkan RecyclerView sesuai modul praktikum dengan minimal data yang ditampilkan adalah 10.
+  2. Menerapkan RecyclerView sesuai modul praktikum dengan minimal data yang ditampilkan adalah 10.
+  3. Tema aplikasi **tidak boleh sama** dengan contoh pada modul praktikum
      
   Mendapat **nilai tambahan** jika menerapkan fungsi _on click_ pada setiap item RecyclerView (aksi onClick bebas)
   
