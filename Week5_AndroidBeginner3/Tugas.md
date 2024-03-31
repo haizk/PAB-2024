@@ -6,10 +6,11 @@
 
       Contoh layout : 
 
-      ![alt text](assets/tugas/item_layout.png)
+      ![alt text](assets/item_layout.png)
+     
       Layout diatas **hanya contoh**, dapat dikustomisasi sesuai dengan kreativitas kalian.
 
-  2. Menerapkan RecyclerView sesuai modul praktikum dengan minimal data yang ditampilkan adalah 10.
+  3. Menerapkan RecyclerView sesuai modul praktikum dengan minimal data yang ditampilkan adalah 10.
      
   Mendapat **nilai tambahan** jika menerapkan fungsi _on click_ pada setiap item RecyclerView (aksi onClick bebas)
   
