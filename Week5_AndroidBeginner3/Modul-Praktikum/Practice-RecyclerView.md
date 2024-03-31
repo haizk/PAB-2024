@@ -66,7 +66,7 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 ## Persiapan
 
-### Menambahkan Plugin
+### Menambahkan Plugin (Bagi Pengguna Android Studio Iguana & Android Studio dengan file `libs.version.toml`)
 
 1. Pada file `libs.version.toml`, tambahkan kode berikut pada bagian **[version]** : 
     ```kotlin
@@ -149,6 +149,29 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
     ![alt-text](assets/Menambahkan-Plugin/3.png) 
 
+### Menambahkan Plugin (Bagi Pengguna Android Studio yg tidak ada file `libs.version.toml`)
+
+1. Buka file `build.gradle` pada level module (Module: app) dan tambahkan plugin berikut.
+
+   ```
+   id("kotlin-parcelize")
+   ```
+
+   Sehingga isi _plugin_ akan menjadi seperti ini
+   
+   ```
+   plugins {
+       id("com.android.application")
+       id("org.jetbrains.kotlin.android")
+       id("kotlin-parcelize")
+   }
+   ```
+
+3. Klik `Sync Now`
+
+    Klik tombol `Sync Now` seperti pada gambar di bawah, lalu tunggu hingga selesai.
+
+    ![alt-text](assets/Menambahkan-Plugin/3.png) 
 
 ### Mendownload _asset_
 Download _asset_ yang dibutuhkan pada praktikum kali ini melalui link [berikut](https://drive.google.com/file/d/1EPxdCJ6yt-xm_PgdPaaWzkmfDmhDmGfB/view?usp=sharing).
