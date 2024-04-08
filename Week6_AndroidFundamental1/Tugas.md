@@ -3,14 +3,17 @@
 ### Buatlah sebuah aplikasi android dengan mengimplementasikan komponen - komponen di bawah ini.
 
   1. Aplikasi tersebut harus menggunakan **Bottom Navigation** dengan **kriteria** sebagai berikut.
-      - Minimal **terdapat 4 item yang menampilkan 4 screen pada bottom navigation**
+      - Minimal **terdapat 43tem yang menampilkan 3 screen pada bottom navigation**
       - Isi **konten pada tiap screen harus berbeda-beda**
+      - **Icon pada Bottom Navigation** tidak boleh sama seperti pada template
 
-  2. Aplikasi harus menerapkan **Navigation Component** dengan **kriteria** sebagai berikut. 
+  2. Aplikasi menerapkan **Navigation Component** dengan **kriteria** sebagai berikut **(Opsional)**
       - Minimal terdapat **1 Actions yang menuju ke 1 Screen Destinations dengan mengirim data menggunakan bundle**
-      - Jika bisa menerapkan **lebih dari 1 Destination akan mendapatkan nilai tambahan.**
+      - Menerapkan **lebih dari 1 Destination akan mendapatkan nilai tambahan.**
 
-  3. Sertakan **Screenshot dari Navigation Graph** pada Laporan Praktikum.
+  3. Sertakan **Screenshot dari Navigation Graph** pada Laporan Praktikum **(Opsional)**
+
+  Note: Jika menerapkan fitur opsional maka akan mendapat nilai tambahan, asisten sangat merekomendasikan untuk membuat fitur opsional jika pengumpuluan tugas praktikum sebelumnya banyak mengalami keterlambatan pengumpuluan.
 
   ### Berikut konsep dari Kriteria Aplikasi
 
