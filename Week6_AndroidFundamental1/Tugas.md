@@ -3,7 +3,7 @@
 ### Buatlah sebuah aplikasi android dengan mengimplementasikan komponen - komponen di bawah ini.
 
   1. Aplikasi tersebut harus menggunakan **Bottom Navigation** dengan **kriteria** sebagai berikut.
-      - Minimal **terdapat 43tem yang menampilkan 3 screen pada bottom navigation**
+      - Minimal **terdapat 3 item yang menampilkan 3 screen pada bottom navigation**
       - Isi **konten pada tiap screen harus berbeda-beda**
       - **Icon pada Bottom Navigation** tidak boleh sama seperti pada template
 
