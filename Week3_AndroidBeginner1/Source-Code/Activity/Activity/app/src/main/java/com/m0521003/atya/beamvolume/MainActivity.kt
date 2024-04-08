@@ -52,26 +52,31 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-        if(view?.id == R.id.btn_calculate){
-            val inputLength = edtLength.text.toString().trim()
-            val inputWidth = edtWidth.text.toString().trim()
-            val inputHeight = edtHeight.text.toString().trim()
-            var isEmptyFields = false
-            if (inputLength.isEmpty()) {
-                isEmptyFields = true
-                edtLength.error = "Field ini tidak boleh kosong"
-            }
-            if (inputWidth.isEmpty()) {
-                isEmptyFields = true
-                edtWidth.error = "Field ini tidak boleh kosong"
-            }
-            if (inputHeight.isEmpty()) {
-                isEmptyFields = true
-                edtHeight.error = "Field ini tidak boleh kosong"
-            }
-            if (!isEmptyFields) {
-                val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
-                tvResult.text = volume.toString()
+//        if(view?.id == R.id.btn_calculate){
+//
+//        }
+        when(view?.id){
+            R.id.btn_calculate ->{
+                val inputLength = edtLength.text.toString().trim()
+                val inputWidth = edtWidth.text.toString().trim()
+                val inputHeight = edtHeight.text.toString().trim()
+                var isEmptyFields = false
+                if (inputLength.isEmpty()) {
+                    isEmptyFields = true
+                    edtLength.error = "Field ini tidak boleh kosong"
+                }
+                if (inputWidth.isEmpty()) {
+                    isEmptyFields = true
+                    edtWidth.error = "Field ini tidak boleh kosong"
+                }
+                if (inputHeight.isEmpty()) {
+                    isEmptyFields = true
+                    edtHeight.error = "Field ini tidak boleh kosong"
+                }
+                if (!isEmptyFields) {
+                    val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
+                    tvResult.text = volume.toString()
+                }
             }
         }
     }
