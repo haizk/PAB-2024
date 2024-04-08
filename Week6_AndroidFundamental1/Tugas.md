@@ -2,19 +2,22 @@
 
 ### Buatlah sebuah aplikasi android dengan mengimplementasikan komponen - komponen di bawah ini.
 
-  1. Membuat Item Layout yang didalamnya terdapat gambar, judul, dan deskripsi secara singkat.
+  1. Aplikasi tersebut harus menggunakan **Bottom Navigation** dengan **kriteria** sebagai berikut.
+      - Minimal **terdapat 4 item yang menampilkan 4 screen pada bottom navigation**
+      - Isi **konten pada tiap screen harus berbeda-beda**
 
-      Contoh layout : 
+  2. Aplikasi harus menerapkan **Navigation Component** dengan **kriteria** sebagai berikut. 
+      - Minimal terdapat **1 Actions yang menuju ke 1 Screen Destinations dengan mengirim data menggunakan bundle**
+      - Jika bisa menerapkan **lebih dari 1 Destination akan mendapatkan nilai tambahan.**
 
-      ![alt text](assets/item_layout.png)
-     
-      Layout diatas **hanya contoh**, dapat dikustomisasi sesuai dengan kreativitas kalian.
+  3. Sertakan **Screenshot dari Navigation Graph** pada Laporan Praktikum.
 
-  2. Menerapkan RecyclerView sesuai modul praktikum dengan **minimal data** yang ditampilkan adalah **10**.
-  3. Tema aplikasi **tidak boleh sama** dengan contoh pada modul praktikum
-     
-  _Mendapat **nilai tambahan** jika menerapkan fungsi _on click_ pada setiap item RecyclerView (aksi onClick bebas)_
-  
+  ### Berikut konsep dari Kriteria Aplikasi
+
+  ![UI](assets/UI-Week6.png)
+
+
+    
   ### Ketentuan Source Code Aplikasi
 1. Menggunakan Android Studio
 2. Menggunakan bahasa pemrograman Kotlin
@@ -24,7 +27,7 @@
  ### Detail Laporan Praktikum
 #### Laporan berisi screenshot source code dan tampilan user interface beserta penjelasannya disertai dengan kesimpulan. 
     
-Tugas dikumpulkan dalam bentuk **.ZIP** dengan format nama **PPAB-05_NIM_Nama.zip yang berisi source code dari aplikasi** dan **.PDF dengan format nama PPAB-05_NIM_Nama.pdf yang berisi laporan praktikum**. Perlu diingat bahwa **file .zip tidak berisikan file pdf, murni berisi source code saja** dan gunakan **cara .zip sesuai yang diajarkan oleh asisten**.
+Tugas dikumpulkan dalam bentuk **.ZIP** dengan format nama **PPAB-05_NIM_Nama.zip yang berisi source code dari aplikasi** dan **.PDF dengan format nama PPAB-06_NIM_Nama.pdf yang berisi laporan praktikum**. Perlu diingat bahwa **file .zip tidak berisikan file pdf, murni berisi source code saja** dan gunakan **cara .zip sesuai yang diajarkan oleh asisten**.
 
     PPAB-XX_NIM_Nama.zip
     PPAB-XX_NIM_Nama.pdf
