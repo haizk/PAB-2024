@@ -16,7 +16,7 @@
 
   List email dan detail email sama-sama memiliki fragment tersendiri. Kedua fragment tersebut dapat ditampilkan secara bersamaan pada satu Activity yang sama.
 
-## Menambahkan Fragment
+### Menambahkan Fragment
 
 ``` kotlin
 val fragmentManager = supportFragmentManager
@@ -52,3 +52,46 @@ Terdapat video tambahan yang menjelaskan mengenai penerapan *back stack* ini, da
   Ketika fragment tidak terlihat di layar. Banyak faktor seperti, ketika activity dimana fragment tersebut ditambahkan berhenti atau fragment itu sendiri telah dihapus dari activity. Pada kondisi ini fragment masih hidup dengan semua informasinya. Akan tetapi sudah tidak kelihatan di layar dan akan dihancurkan.
 
 Skema di bawah ini menunjukkan callback method apa saja yang akan dipanggil di dalam fragment ketika terjadi perubahan pada sebuah activity.
+
+![skema callback method](assets/skema.png)
+
+Fragment merupakan komponen view yang dapat ditambahkan (*embed*) ke dalam activity maka dari itu, perubahan *state* dari sebuah activity akan memengaruhi *life cycle* dari sebuah *fragment*.
+
+### Perbedaan Kode Activity dan Fragment
+
+|      | Operasi | Fungsi |
+|------|---------|---------|
+| Context | this | requireActivity()/getActivity()|
+| Fungsi Utama | onCreate | onViewCreated |
+| Cara mengambil View | findViewById | view.findViewById |
+
+  Jadi, ketika menggunakan **this** di activity dapat diubah menjadi **requireActivit()** untuk bahasa Kotlin dan *getActvity* untuk bahasa Java. Sebagai contoh dalam penerapan pada kode nya sebagai berikut:
+
+*sebelum*
+``` kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+ 
+    val btnProfile = findViewById(R.id.btn_profile)
+    btnProfile.setOnClickListener{
+        Toast.makeText(this@MainActivity, "Halo", Toast.LENGTH_SHORT).show()
+    }
+}
+```
+
+*sesudah*
+``` kotlin
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+ 
+    val btnProfile = view.findViewById(R.id.btn_profile)
+    btnProfile.setOnClickListener{
+        Toast.makeText(requireActivity(), "Halo", Toast.LENGTH_SHORT).show()
+    }
+}
+```
+
+Untuk lebih detail mengenai materi Fragment, kalian dapat belajar mandiri melalui tautan berikut:
+
+-  [Fragment](https://developer.android.com/guide/fragments)
