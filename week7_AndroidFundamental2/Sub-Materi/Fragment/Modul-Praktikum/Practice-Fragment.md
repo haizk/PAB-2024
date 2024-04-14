@@ -4,7 +4,7 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 1. Kalian bisa **Running** Android Studio terlebih dahulu, maka akan menampilkan tampilan kurang lebih seperti ini. Kemudian, kalian bisa pilih **New Project**.
 
-//nyusul
+   ![1](assets/1.png)
 
 2. Dikarenkakan kita hanya membuat basic project saja maka kalian bisa memilih yang **Empty View Activity** seperti biasa. Kemudian, bisa klik Next.
 
@@ -12,7 +12,7 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
     **com.nim.2namapertama.flexibleFragment.**
 
-  //nyusul
+  ![2](assets/2.png)
 
 4. Kemudian, untuk save location bisa disesuaikan sesuai dengan path pada device masing-masing. Lalu bisa pilih Finish.
 
@@ -32,11 +32,9 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 6. Kemudian kita buat beberapa fragment untuk mengimplementasikan perpindahan tampilan tanpa perpindahan activity. Pertama kita buat fragment dengan nama **HomeFragment**. Caranya : klik kanan pada package utama pada proyek aplikasi Anda → **New** → **Fragment** → **Fragment (Blank)**.
 
-//nyusul
+   ![3](assets/3.png)
 
 7. Setelah tampil dialog untuk fragment, isikan **HomeFragment** pada kolom **Fragment Name** dan Klik **Finish** untuk melanjutkan penciptaan fragment.
-
-//nyusul
 
 8. Setelahnya, sesuaikan tampilannya dengan menambahkan sebuah objek textview dan button pada file **fragment_home.xml**, seperti berikut:
 ```kotlin
@@ -60,7 +58,8 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
         android:text="@string/to_category" />
 </LinearLayout>
 ```
-
+ ![4](assets/4.png)
+ 
 9.  Akan ada *error* pada bagian **android:text**. Tambahkan beberapa baris kode di bawah ini ke dalam **res** -> **values** -> **strings.xml**
 ```kotlin
 <resources>
@@ -84,6 +83,8 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
     <string name="close">Tutup</string>
 </resources>
 ```
+
+ ![5](assets/5.png)
 
 10.  Pada **HomeFragment** hapus kode yang tidak digunakan dan sesuaikan kode nya dengan bawah ini:
 ```kotlin
