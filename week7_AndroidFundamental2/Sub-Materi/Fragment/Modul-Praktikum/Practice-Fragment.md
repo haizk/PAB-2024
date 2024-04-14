@@ -131,5 +131,4 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 12. Setelah selesai dan jalankan aplikasi, tampilannya akan seperti gambar di bawah ini.
 
-//nyusul
-
+![6](assets/6.png)
