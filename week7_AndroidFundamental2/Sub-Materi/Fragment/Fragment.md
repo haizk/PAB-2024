@@ -31,3 +31,24 @@ fragmentManager
 
 FragmentManager adalah kelas yang bertanggung jawab untuk mengelola Fragment ke dalam Activity. Setelah menginisialisasi Fragment Manager, Anda bisa melakukan beberapa aksi terhadap Fragment seperti **add()**, **replace()**, dan **remove()**. Kemudian untuk mengaplikasikannya, Anda harus memanggil fungsi **commit()**. Sebelumnya, Anda dapat menambahkan kode **addToBackStack()** untuk menyimpan transaksi terakhir ke *back stack*.
 
+*Back stack* dapat diilustrasikan seperti sebuah tumpukan buku, ketika melakukan transaksi seperti menambahkan buku baru di atasnya lalu menekan tombol back, maka buku yang paling atas diambil.
+
+![back_stack](assets/back_stack.png)
+
+Terdapat video tambahan yang menjelaskan mengenai penerapan *back stack* ini, dapat dilihat di bawah ini.
+
+-  [Dissecting back stack](https://youtu.be/KzHvtS3B5zk?si=GqdFTSDptTDeLWcQ)
+
+## Fragment Lifecycle
+  Berikut ada beberapa state yang perlu diperhatikan sebelum menggunakan fragment.
+
+-  **Resumed**
+  Ketika Activity sedang berjalan, fragment dapat dilihat.
+
+-  **Paused**
+  Ketika ada activity lain yang menutupi sebagian dari activity dimana fragment ditambahkan.
+
+-  **Stopped**
+  Ketika fragment tidak terlihat di layar. Banyak faktor seperti, ketika activity dimana fragment tersebut ditambahkan berhenti atau fragment itu sendiri telah dihapus dari activity. Pada kondisi ini fragment masih hidup dengan semua informasinya. Akan tetapi sudah tidak kelihatan di layar dan akan dihancurkan.
+
+Skema di bawah ini menunjukkan callback method apa saja yang akan dipanggil di dalam fragment ketika terjadi perubahan pada sebuah activity.
