@@ -205,9 +205,57 @@ class CategoryFragment : Fragment(), View.OnClickListener {
 
 ![simulasi](assets/simulasi_2.gif)
 
+***Note kicil***:
+Untuk fragment Dialog dan fragment ke halaman profile Activity tidak akan ditampilkan pada tutorial kali ini, akan tetapi kalian bisa langsung mengunduh nya pada Source Code yang telah disediakan. Tks :D
 
-7. 
-8. 
+## Cara umum dalam mengirimkan data
+Jadi 2 cara yang umum dilakukan dan diimplementasikan dalam mengirimkan data, yaitu dengan cara menggunakan **Bundle** dan menggunakan **Setter** dan **Getter**. 
+
+-    **Dengan Menggunakan Bundle**
+
+```kotlin
+val bundle = Bundle()
+bundle.putString(DetailCategoryFragment.EXTRA_NAME, "Lifestyle")
+```
+Pada kode di atas kita menggunakan obyek bundle untuk mengirimkan data antar fragment. Perhatikan cara yang digunakan sama dengan cara yang telah kita implementasikan sebelumnya di activity. Setelah dibuat obyeknya dan data yang mau dikirimkan apa, kita hanya perlu menambahkan sebaris kode berikut:
+
+```kotlin
+detailCategoryFragment.arguments = bundle
+```
+
+Cara mengambil data yang dikirimkan melalui obyek **bundle** pada fragment tujuan pun, sangatlah mudah. Cukup memanggil metode **getArguments()** di fragment DetailCategoryFragment seperti berikut:
+
+```kotlin
+val categoryName = arguments?.getString(EXTRA_NAME)
+```
+Kelas **Bundle** merupakan kelas map data string untuk obyek-obyek parcelable. Di sini kita bisa menginput lebih dari satu parameter/variabel ke dalam obyek **Bundle**.
+
+-    **Dengan Menggunakan Setter dan Getter**
+Java pada umumnya memiliki kelas Fragment, dengan menggunakan metode *setter* and *getter* untuk mengirimkan parameter/variabel dari satu fragment ke fragment lainnya. Seperti baris berikut:
+
+```kotlin
+val description = "Kategori ini akan berisi produk-produk lifestyle"
+detailCategoryFragment.description = description
+```
+
+Yang mana isi kode pada kelas **DetailCategoryFragment** sebagai berikut:
+```kotlin
+var description: String? = null
+ 
+companion object {
+    var EXTRA_NAME = "extra_name"
+    var EXTRA_DESCRIPTION = "extra_description"
+}
+```
+
+Cara menggunakannya juga cukup mudah, yakni hanya dengan menempatkan value yang ingin dikirimkan via metode setter lalu diambil dengan menggunakan metode getter seperti pada baris berikut:
+
+```kotlin
+tvCategoryDescription.text = description
+```
 
 
+##
+Tautan di bawah ini akan membantu pemahaman kalian mengenai Interface.
 
+-    [Interface](https://docs.oracle.com/javase/tutorial/java/concepts/interface.html)
