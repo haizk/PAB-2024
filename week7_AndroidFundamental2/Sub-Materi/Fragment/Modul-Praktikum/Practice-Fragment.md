@@ -321,5 +321,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 }
 ```
 
-7.  
-8. 
+7.  Setelah selesai, jalankan aplikasi. Klik tombol **Ke fragment Category**. Aplikasi telah dapat berpindah tampilan tanpa berpindah activity.
+
+//nyusul
+9. 
