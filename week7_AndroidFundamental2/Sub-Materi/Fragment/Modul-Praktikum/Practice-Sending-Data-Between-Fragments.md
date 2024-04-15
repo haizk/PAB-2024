@@ -203,7 +203,9 @@ class CategoryFragment : Fragment(), View.OnClickListener {
 
 6. Sekarang setelah selesai semua, silakan jalankan aplikasinya untuk melihat hasil kode yang di atas. Seharusnya ketika Anda mengklik tombol **Kategory Lifestyle** pada **CategoryFragment** akan ada data yang dikirimkan sewaktu perpindahan fragment itu melalui object bundle dan mekanisme metode setter and getter. Tampilan aplikasi Anda sekarang sudah menjadi seperti ini.
 
-//nyusul
+![simulasi](assets/simulasi.gif)
+
+
 7. 
 8. 
 
