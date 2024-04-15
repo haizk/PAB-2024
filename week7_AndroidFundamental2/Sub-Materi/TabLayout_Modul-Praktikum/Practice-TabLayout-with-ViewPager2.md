@@ -3,9 +3,9 @@
 ***Pemahaman singkat mengenai Tab Layout***
 
 
-Tab Layout adalah salah satu bagian dari Android Design Support Library yang menyediakan UI untuk menavigasi antara beberapa tab dengan konten yang terkait dalam aplikasi Android. Dengan TabLayout, pengguna dapat dengan mudah beralih antara berbagai bagian atau fitur dalam aplikasi tanpa perlu meninggalkan tampilan utama. Setiap tab biasanya memiliki label yang deskriptif dan bisa memiliki ikon sebagai representasi visual dari konten yang terkait.
+  Tab Layout adalah salah satu bagian dari Android Design Support Library yang menyediakan UI untuk menavigasi antara beberapa tab dengan konten yang terkait dalam aplikasi Android. Dengan TabLayout, pengguna dapat dengan mudah beralih antara berbagai bagian atau fitur dalam aplikasi tanpa perlu meninggalkan tampilan utama. Setiap tab biasanya memiliki label yang deskriptif dan bisa memiliki ikon sebagai representasi visual dari konten yang terkait.
 
-TabLayout biasanya digunakan bersama dengan ViewPager, yang memungkinkan pengguna untuk menggeser antara tab atau dengan FragmentContainerView untuk menampilkan konten yang terkait dengan setiap tab. Berikut adalah beberapa kegunaan umum TabLayout dalam pengembangan aplikasi Android:
+  TabLayout biasanya digunakan bersama dengan ViewPager, yang memungkinkan pengguna untuk menggeser antara tab atau dengan FragmentContainerView untuk menampilkan konten yang terkait dengan setiap tab. Berikut adalah beberapa kegunaan umum TabLayout dalam pengembangan aplikasi Android:
 
 -  ***Navigasi antara bagian aplikasi***
 -  ***Pengaturan***
@@ -16,4 +16,21 @@ Untuk selengkapnya dapat dilihat dan belajar mandiri melalui tautan di bawah ini
 [Tab Layout](https://developer.android.com/reference/com/google/android/material/tabs/TabLayout)
 
 ## PRACTICE TAB LAYOUT WITH VIEWPAGER2
+
+Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing-masing yaa!
+
+1. Kalian bisa Running Android Studio terlebih dahulu, maka akan menampilkan tampilan kurang lebih seperti ini. Kemudian, kalian bisa pilih New Project.
+
+![1](assets/1.png)
+
+2. Dikarenkakan kita hanya membuat basic project saja maka kalian bisa memilih yang Empty View Activity seperti biasa. Kemudian, bisa klik Next.
+
+3. Maka, akan ditampilkan window seperti berikut ini. Untuk nama, Language, Minimum SDK, dan Build configuration language bisa mengikuti seperti pada gambar, sedangkan untuk package bisa disesuaikan dengan format berikut ini:
+
+4. Kemudian, untuk save location bisa disesuaikan sesuai dengan path pada device masing-masing. Lalu bisa pilih Finish.
+
+
+5. 
+
+6. 
 
