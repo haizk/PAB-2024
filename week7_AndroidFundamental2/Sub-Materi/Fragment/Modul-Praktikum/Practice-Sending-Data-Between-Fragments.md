@@ -10,7 +10,7 @@ Selanjutnya kita akan berpindah dari satu fragment ke fragment lain dengan memba
 
 ![8](assets/8.png)
 
-3. Pada **fragmetn_detail_category_ sesuaikan kodenya menjadi seperti di bawah ini.
+3. Pada **fragmetn_detail_category_** sesuaikan kodenya menjadi seperti di bawah ini.
 ```kotlin
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -65,6 +65,7 @@ class DetailCategoryFragment : Fragment(){
 }
 ```
 Dan tambahkan beberapa variabel dan berikan aksi ketika button diklik.
+
 ```kotlin
 class DetailCategoryFragment : Fragment() {
     ...
@@ -90,7 +91,10 @@ class DetailCategoryFragment : Fragment() {
     }
 }
 ```
+
 Kode di atas akan mendemonstrasikan bagaimana melakukan penampilan data yang dikirim melalui perpindahan fragment. Sehingga **DetailCategoryFragment** menjadi seperti ini:
+
+
 ```kotlin
 class DetailCategoryFragment : Fragment() {
  
@@ -133,8 +137,9 @@ class DetailCategoryFragment : Fragment() {
 ```
 
 
-
 5. Sekarang buka kembali CategoryFragment lalu tambahkan baris berikut pada method **onClick()**.
+
+
 ```kotlin
 override fun onClick(v: View?) {
     if (v?.id == R.id.btn_detail_category) {
@@ -198,7 +203,7 @@ class CategoryFragment : Fragment(), View.OnClickListener {
 
 6. Sekarang setelah selesai semua, silakan jalankan aplikasinya untuk melihat hasil kode yang di atas. Seharusnya ketika Anda mengklik tombol **Kategory Lifestyle** pada **CategoryFragment** akan ada data yang dikirimkan sewaktu perpindahan fragment itu melalui object bundle dan mekanisme metode setter and getter. Tampilan aplikasi Anda sekarang sudah menjadi seperti ini.
 
-
+//nyusul
 7. 
 8. 
 
