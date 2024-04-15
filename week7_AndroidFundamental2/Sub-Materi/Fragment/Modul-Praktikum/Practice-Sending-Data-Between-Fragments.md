@@ -8,7 +8,7 @@ Selanjutnya kita akan berpindah dari satu fragment ke fragment lain dengan memba
 
 ![3](assets/3.png)
 
-//ss-an DetailCategoryFragment
+![8](assets/8.png)
 
 3. Pada **fragmetn_detail_category_ sesuaikan kodenya menjadi seperti di bawah ini.
 ```kotlin
