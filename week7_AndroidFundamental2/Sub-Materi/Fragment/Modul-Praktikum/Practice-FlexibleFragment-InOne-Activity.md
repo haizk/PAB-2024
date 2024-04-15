@@ -77,6 +77,7 @@ override fun onClick(v: View?) {
 ```
 
 6.  Sehingga kode dari **HomeFragment** menjadi seperti berikut:
+
 ```kotlin
 class HomeFragment : Fragment(), View.OnClickListener {
  
@@ -93,7 +94,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
  
     override fun onClick(v: View?) {
-        if (v?.id == R.id.btn_category) {
+        if (v.id == R.id.btn_category) {
             val categoryFragment = CategoryFragment()
             val fragmentManager = parentFragmentManager
             fragmentManager.beginTransaction().apply {
@@ -105,6 +106,21 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 }
 ```
+
+-    Apabila Activity memanfaatkan **supportFragmentManager**, Fragment menggunakan **parentFragmentManager** untuk mendapatkan *FragmentManager* dari Activity. Setelahnya dapat terjadi transaksi pergantian fragment.
+
+```kotlin
+val categoryFragment = CategoryFragment()
+val fragmentManager = parentFragmentManager
+fragmentManager.beginTransaction().apply {
+    replace(R.id.frame_container, categoryFragment, CategoryFragment::class.java.simpleName)
+    addToBackStack(null)
+    commit()
+}
+```
+-    ***Note***    : Perhatikan kode di atas, perbedaannya terletak pada *method* yang dipakai, yaitu **replace()** dan bukan lagi **add** ketika ingin menempellkan sebuah fragment baru. Kedua *method* dengan parameter input yang sama akan mengganti objek fragment yang sedang tampil, yaitu **HomeFragment** dengan objek fragment baru, yaitu **CategoryFragment**.
+  
+-    ***Note***    : Karena objek fragment akan masuk ke dalam sebuah fragment *stack*, maka kita harus menaruh **.addToBackStack(null)** setelah menginisialisasi *method* nya. Nantinya ketika kita tekan tombol *back*, ia akan *pop-out* keluar dari *stack* dan menampilkan objek fragment sebelumnya **HomeFragment**. Akan tetapi ketika **.addToBackStack(null)** dihapus dan menjalankan ulang aplikasinya, dan kemudian klik tombol back pada peranti, maka aplikasi akan langsung tertutup. Kalian dapat mencobanya sendiri dan lihat perbedaan nya.
 
 7.  Setelah selesai, jalankan aplikasi. Klik tombol **Ke fragment Category**. Aplikasi telah dapat berpindah tampilan tanpa berpindah activity.
 
