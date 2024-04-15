@@ -109,6 +109,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 Di sini kita juga siapkan kode listener **onClick**. Listener di sini akan kita gunakan pada latihan berikutnya.
 
 11.  Selanjutnya pada **MainActivity** masukkan **HomeFragment** tadi ke dalam activity tersebut hingga tampil ke layar pengguna dengan menambahkan baris kode berikut:
+
 ```kotlin
 ...
 override fun onCreate(savedInstanceState: Bundle?) {
@@ -129,7 +130,87 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ...
 ```
 
-12. Setelah selesai dan jalankan aplikasi, tampilannya akan seperti gambar di bawah ini.
+12. Berikut adalah full code dari **MainActivity**, **HomeFragment** dan **fragment_home.xml**
+
+```kotlin
+package com.m0521074.ayuk.flexiblefragment
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val fragmentManager = supportFragmentManager
+        val homeFragment = HomeFragment()
+        val fragment = fragmentManager.findFragmentByTag(HomeFragment::class.java.simpleName)
+        if (fragment !is HomeFragment) {
+            Log.d("MyFlexibleFragment", "Fragment Name :" + HomeFragment::class.java.simpleName)
+            fragmentManager
+                .beginTransaction()
+                .add(R.id.frame_container, homeFragment, HomeFragment::class.java.simpleName)
+                .commit()
+        }
+    }
+}
+```
+
+```kotlin
+package com.m0521074.ayuk.flexiblefragment
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+
+class HomeFragment : Fragment(), View.OnClickListener {
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val btnCategory: Button = view.findViewById(R.id.btn_category)
+        btnCategory.setOnClickListener(this)
+    }
+    override fun onClick(v: View) {
+
+    }
+}
+```
+
+```kotlin
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/hello_home_fragment" />
+
+
+    <Button
+        android:id="@+id/btn_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/to_category" />
+</LinearLayout>
+```
+
+13. Setelah selesai dan jalankan aplikasi, tampilannya akan seperti gambar di bawah ini.
 
 ![6](assets/6.png)
 
@@ -143,4 +224,102 @@ Selanjutnya kita akan membuat fragment baru yang fleksibel.
 
 ![3](assets/3.png)
 
-//nyusul
+![7](assets/7.png)
+
+3. Pada file **fragment_category.xml** silahkan diubah seperti berikut.
+
+```kotlin
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+ 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/this_category" />
+    <Button
+        android:id="@+id/btn_detail_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/category_lifestyle" />
+</LinearLayout>
+```
+
+4. Selesai dengan layout xml, kini pada berkas **CategoryFragment** modifikasi kodenya menjadi sebagai berikut:
+
+```kotlin
+class CategoryFragment : Fragment(), View.OnClickListener {
+ 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_category, container, false)
+    }
+ 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val btnDetailCategory:Button = view.findViewById(R.id.btn_detail_category)
+        btnDetailCategory.setOnClickListener(this)
+    }
+ 
+    override fun onClick(v: View?) {
+        if (v?.id == R.id.btn_detail_category) {
+  
+        }
+    }
+}
+```
+Sama seperti sebelumnya, kita siapkan **onClick** untuk modul berikutnya yaitu **"Mengirim Data Antar Fragment"**.
+
+5. Sekarang kembali pada **HomeFragment**. Tambahkan baris berikut pada metode **onClick()**.
+
+```kotlin
+override fun onClick(v: View?) {
+    if (v?.id == R.id.btn_category) {
+        val categoryFragment = CategoryFragment()
+        val fragmentManager = parentFragmentManager
+        fragmentManager.beginTransaction().apply {
+            replace(R.id.frame_container, categoryFragment, CategoryFragment::class.java.simpleName)
+            addToBackStack(null)
+            commit()
+        }
+    }
+}
+```
+
+6.  Sehingga kode dari **HomeFragment** menjadi seperti berikut:
+```kotlin
+class HomeFragment : Fragment(), View.OnClickListener {
+ 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+ 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val btnCategory:Button = view.findViewById(R.id.btn_category)
+        btnCategory.setOnClickListener(this)
+    }
+ 
+    override fun onClick(v: View?) {
+        if (v?.id == R.id.btn_category) {
+            val categoryFragment = CategoryFragment()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, categoryFragment, CategoryFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+    }
+}
+```
+
+7.  
+8. 
