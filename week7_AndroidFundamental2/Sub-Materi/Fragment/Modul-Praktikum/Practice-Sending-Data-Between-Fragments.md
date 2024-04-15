@@ -92,7 +92,7 @@ class DetailCategoryFragment : Fragment() {
 }
 ```
 
-Kode di atas akan mendemonstrasikan bagaimana melakukan penampilan data yang dikirim melalui perpindahan fragment. Sehingga **DetailCategoryFragment** menjadi seperti ini:
+Kode di atas akan mendemonstrasikan bagaimana melakukan penampilan data yang dikirim melalui perpindahan fragment. Sehingga full kode dari **DetailCategoryFragment** menjadi seperti betikut:
 
 
 ```kotlin
@@ -160,7 +160,7 @@ override fun onClick(v: View?) {
 }
 ```
 
-Sehingga kode CategoryFragment kita sekarang menjadi:
+Sehingga full kode dari **CategoryFragment** sekarang menjadi:
 
 ```kotlin
 class CategoryFragment : Fragment(), View.OnClickListener {
