@@ -29,7 +29,7 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 </FrameLayout>
 ```
-Dengan sifat dari komponen FrameLayout yang menumpuk, membuat ia menjadi layout yang paling optimal untuk proses manipulasi penampilan objek fragment ke layar pengguna.
+-   Dengan sifat dari komponen FrameLayout yang menumpuk, membuat ia menjadi layout yang paling optimal untuk proses manipulasi penampilan objek fragment ke layar pengguna.
 
 6. Kemudian kita buat beberapa fragment untuk mengimplementasikan perpindahan tampilan tanpa perpindahan activity. Pertama kita buat fragment dengan nama **HomeFragment**. Caranya : klik kanan pada package utama pada proyek aplikasi Anda → **New** → **Fragment** → **Fragment (Blank)**.
 
@@ -87,7 +87,8 @@ Dengan sifat dari komponen FrameLayout yang menumpuk, membuat ia menjadi layout 
 
  ![5](assets/5.png)
 
-10.  Pada **HomeFragment** hapus kode yang tidak digunakan dan sesuaikan kode nya dengan bawah ini:
+10.  Pada **HomeFragment** hapus kode yang tidak digunakan dan sesuaikan kode nya seperti di bawah ini.
+
 ```kotlin
 class HomeFragment : Fragment(), View.OnClickListener {
  
@@ -107,7 +108,35 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 }
 ```
-Di sini kita juga siapkan kode listener **onClick**. Listener di sini akan kita gunakan pada latihan berikutnya.
+-   Pada kelas di atas *layout interface* nya didefinisikan dan ditransformasikan dari *layout* berupa file xml ke dalam objek view dengan menggunakan metode **inflate()**, ini merupakan bagian dari metode **onCreateView()** dalam kelas HomeFragment.
+-   Di kelas HomeFragment di atas juga terdapat metode **onViewCreated()** yang akan bekerja setelah metode onCreateView(). Hanya dapat digunakan untuk inisialisasi view dan juga mengatur *action*-nya atau *set listener* nya. 
+
+**Attention!**
+
+```kotlin
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val btnCategory:Button = view.findViewById(R.id.btn_category)
+        btnCategory.setOnClickListener(this)    
+    }
+```
+-   ***Note***:
+Tidak seperti di Activity, pemanggilan **findViewById()** tidak dapat langsung dilakukan, diperlukan menambahkan variabel **view** terlebih dahulu didepannya, sehingga menjadi **view.findViewById()**.
+
+```kotlin
+inflater.inflate(R.layout.fragment_home, container, false)
+```
+-   ***Note***:
+LayoutInflater memiliki objek **Inflater.inflate()** yang berfungsi mengubah layout xml ke dalam bentuk objek viewgroup atau *widget* melalui pemanggilan metode **inflate()**. Fungsi **inflate** di sini yaitu untuk menampilkan layout dari Fragment, di mana layout yang ditampilkan di sini yaitu **fragment_home**.
+
+Bacaan berikut akan memberi wawasan yang lebih dalam tentang proses inflate sebuah layout:
+[Inflate Layout](https://bignerdranch.com/blog/understanding-androids-layoutinflater-inflate/)
+
+```kotlin
+val btnCategory:Button = view.findViewById(R.id.btn_category)
+```
+-   ***Note***:
+Sedikit berbeda pada proses casting view dari sebuah ID di dalam layout xml, di sini casting objek button dilakukan dengan **view.findViewById(R.id.btn_category)**. Kode tersebut menandakan **btn_category** berada pada objek view di mana objek view berasal dari konversi **fragment_home.xml**. Bila hanya **findViewById(R.id.btn_category)**, maka **btn_category** berada pada root layout, **activity_main.xml**.
 
 11.  Selanjutnya pada **MainActivity** masukkan **HomeFragment** tadi ke dalam activity tersebut hingga tampil ke layar pengguna dengan menambahkan baris kode berikut:
 
@@ -129,6 +158,40 @@ override fun onCreate(savedInstanceState: Bundle?) {
     }
 }
 ...
+```
+***Attention!***
+
+Kode di bawah ini adalah mekanisme dari pemasangan objek **HomeFragment** pada kelas **MainActivity**
+
+```kotlin
+val fragmentManager = supportFragmentManager
+    val homeFragment = HomeFragment()
+    val fragment = fragmentManager.findFragmentByTag(HomeFragment::class.java.simpleName)
+    if (fragment !is HomeFragment) {
+        Log.d("MyFlexibleFragment", "Fragment Name :" + HomeFragment::class.java.simpleName)
+        fragmentManager
+            .beginTransaction()
+            .add(R.id.frame_container, homeFragment, HomeFragment::class.java.simpleName)
+            .commit()
+    }
+```
+Kita menggunakan *instance* dari FragmentManager yang merupakan antarmuka untuk mengorganisir objek fragment yang terdapat didalam sebuah activity. 
+
+```kotlin
+val fragmentManager = supportFragmentManager
+```
+FragmentTransaction merupakan fungsi untuk melakukan operasi pada fragment seperti **add()**, **replace()**, **commit()** dsb.
+Untuk detail terkait FragmentManager, silakan Anda meluncur ke:
+[Fragment Manager](https://developer.android.com/reference/android/app/FragmentManager.html
+)
+
+Dari kode di bawah adalah proses terjadinya manipulasi penambahan fragment ke dalam activity. Dimulai dengan proses perubahan, dengan metode **.beginTransaction()**. Kemudian metode **Add()** akan menambahkan objek fragment ke dalam layout *container*. Layout container ini merupakan objek framelayout dengan ID **frame_container**. Ia memiliki tag dengan nama kelas dari **HomeFragment** itu sendiri. Metode **.commit()** di atas akan mengeksekusi untuk melakukan pemasangan objek secara asynchronous untuk ditampilkan ke antar muka pengguna (user interface).
+
+```kotlin
+fragmentManager
+        .beginTransaction()
+        .add(R.id.frame_container, HomeFragment(), HomeFragment::class.java.simpleName)
+        .commit()
 ```
 
 12. Berikut adalah full code dari **MainActivity**, **HomeFragment** dan **fragment_home.xml**
@@ -214,114 +277,3 @@ class HomeFragment : Fragment(), View.OnClickListener {
 13. Setelah selesai dan jalankan aplikasi, tampilannya akan seperti gambar di bawah ini.
 
 ![6](assets/6.png)
-
-## FLEXIBLE FRAGMENT IN ONE ACTIVITY
-
-Selanjutnya kita akan membuat fragment baru yang fleksibel.
-
-1. Kita akan membuat di file yang sama, jadi silahkan buka file projek **flexibleFragment** kalian.
-
-2. Dengan cara yang sama seperti sebelumnya, dengan klik kanan pada package utama pada proyek aplikasi Anda → **New → Fragment → Fragment (Blank).** Lalu kemudian buat fragment baru dengan nama **CategoryFragment**.
-
-![3](assets/3.png)
-
-![7](assets/7.png)
-
-3. Pada file **fragment_category.xml** silahkan diubah seperti berikut.
-
-```kotlin
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
- 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/this_category" />
-    <Button
-        android:id="@+id/btn_detail_category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/category_lifestyle" />
-</LinearLayout>
-```
-
-4. Selesai dengan layout xml, kini pada berkas **CategoryFragment** modifikasi kodenya menjadi sebagai berikut:
-
-```kotlin
-class CategoryFragment : Fragment(), View.OnClickListener {
- 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_category, container, false)
-    }
- 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val btnDetailCategory:Button = view.findViewById(R.id.btn_detail_category)
-        btnDetailCategory.setOnClickListener(this)
-    }
- 
-    override fun onClick(v: View?) {
-        if (v?.id == R.id.btn_detail_category) {
-  
-        }
-    }
-}
-```
-Sama seperti sebelumnya, kita siapkan **onClick** untuk modul berikutnya yaitu **"Mengirim Data Antar Fragment"**.
-
-5. Sekarang kembali pada **HomeFragment**. Tambahkan baris berikut pada metode **onClick()**.
-
-```kotlin
-override fun onClick(v: View?) {
-    if (v?.id == R.id.btn_category) {
-        val categoryFragment = CategoryFragment()
-        val fragmentManager = parentFragmentManager
-        fragmentManager.beginTransaction().apply {
-            replace(R.id.frame_container, categoryFragment, CategoryFragment::class.java.simpleName)
-            addToBackStack(null)
-            commit()
-        }
-    }
-}
-```
-
-6.  Sehingga kode dari **HomeFragment** menjadi seperti berikut:
-```kotlin
-class HomeFragment : Fragment(), View.OnClickListener {
- 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
- 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val btnCategory:Button = view.findViewById(R.id.btn_category)
-        btnCategory.setOnClickListener(this)
-    }
- 
-    override fun onClick(v: View?) {
-        if (v?.id == R.id.btn_category) {
-            val categoryFragment = CategoryFragment()
-            val fragmentManager = parentFragmentManager
-            fragmentManager.beginTransaction().apply {
-                replace(R.id.frame_container, categoryFragment, CategoryFragment::class.java.simpleName)
-                addToBackStack(null)
-                commit()
-            }
-        }
-    }
-}
-```
-
-7.  Setelah selesai, jalankan aplikasi. Klik tombol **Ke fragment Category**. Aplikasi telah dapat berpindah tampilan tanpa berpindah activity.
-
-![simulasi](assets/simulasi.gif)
