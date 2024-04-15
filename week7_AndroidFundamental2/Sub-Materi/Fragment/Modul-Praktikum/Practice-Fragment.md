@@ -16,7 +16,7 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 4. Kemudian, untuk save location bisa disesuaikan sesuai dengan path pada device masing-masing. Lalu bisa pilih Finish.
 
-5. Pada **activity_main.xml**, silakan kondisikan kode pada berkas tersebut menjadi seperti berikut:
+5. Pada **activity_main.xml**, silakan kondisikan kode pada file tersebut menjadi seperti berikut:
 
 ``` kotlin
 <?xml version="1.0" encoding="utf-8"?>
@@ -29,6 +29,7 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 </FrameLayout>
 ```
+Dengan sifat dari komponen FrameLayout yang menumpuk, membuat ia menjadi layout yang paling optimal untuk proses manipulasi penampilan objek fragment ke layar pengguna.
 
 6. Kemudian kita buat beberapa fragment untuk mengimplementasikan perpindahan tampilan tanpa perpindahan activity. Pertama kita buat fragment dengan nama **HomeFragment**. Caranya : klik kanan pada package utama pada proyek aplikasi Anda → **New** → **Fragment** → **Fragment (Blank)**.
 
