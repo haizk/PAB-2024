@@ -132,3 +132,15 @@ override fun onCreate(savedInstanceState: Bundle?) {
 12. Setelah selesai dan jalankan aplikasi, tampilannya akan seperti gambar di bawah ini.
 
 ![6](assets/6.png)
+
+## FLEXIBLE FRAGMENT IN ONE ACTIVITY
+
+Selanjutnya kita akan membuat fragment baru yang fleksibel.
+
+1. Kita akan membuat di file yang sama, jadi silahkan buka file projek **flexibleFragment** kalian.
+
+2. Dengan cara yang sama seperti sebelumnya, dengan klik kanan pada package utama pada proyek aplikasi Anda → **New → Fragment → Fragment (Blank).** Lalu kemudian buat fragment baru dengan nama **CategoryFragment**.
+
+![3](assets/3.png)
+
+//nyusul
