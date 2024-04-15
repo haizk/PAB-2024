@@ -1,4 +1,4 @@
-# FRAGMENT DI ACTIVITY PRACTICE
+# PRACTICE FRAGMENT IN ACTIVITY 
 
 Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing-masing yaa!
 
