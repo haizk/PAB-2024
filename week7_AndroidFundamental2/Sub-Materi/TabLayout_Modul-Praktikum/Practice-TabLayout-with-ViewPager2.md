@@ -246,13 +246,116 @@ TabLayoutMediator(tabs, viewPager) { tab, position ->
 
 -  ***Note*** :  Dengan menerapkan TabLayoutMediator, maka Fragment yang tampil pada ViewPager2 akan sesuai dengan posisi yang dipilih pada tab. Selain itu, di sini Anda juga menentukan judul dari masing-masing Tab dengan menggunakan **TAB_TITLE** yang diambil sesuai dengan urutan posisinya.
 
-14. Jalankan aplikasi kalian. Dan tampilannya akan menjadi seperti di bawah ini.
+14. 
+15. Jalankan aplikasi kalian. Dan tampilannya akan menjadi seperti di bawah ini.
+
+![simulesyen](assets/simulesyen.gif)
+
+## Practice Tab Layout With One Fragment
 
 
-//nyusul
+Sekarang kita akan menampilkan dua tampilan yang mirip hanya dengan satu fragment. Dengan cara membuat TabLayout dengan satu fragment saja.
 
-15. 
-16. 
-17. 
-18. 
+1. Buka kembali file projek kalian yang **TabLayout**.
+2. Pertama, masuk ke **HomeFragment**, hapus kode yang tidak dibutuhkan dan tambahkan kode di bawah ini untuk mendapatkan data dan menampikan teks sesuai dengan urusan tab.
 
+```kotlin
+class HomeFragment : Fragment() {
+ 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+ 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val tvLabel: TextView = view.findViewById(R.id.section_label)
+        val index = arguments?.getInt(ARG_SECTION_NUMBER, 0)
+        tvLabel.text = getString(R.string.content_tab_text, index)
+    }
+ 
+    companion object {
+        const val ARG_SECTION_NUMBER = "section_number"
+    }
+}
+```
+
+3. Selanjutnya di dalam **SectionPagerAdapter**, ubah kode untuk menampilkan fragment dan jumlah data yang ditampilkan menjadi tiga, sehingga kode di dalamnya menjadi seperti berikut
+
+```kotlin
+class SectionPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
+ 
+    override fun createFragment(position: Int): Fragment {
+        val fragment = HomeFragment()
+        fragment.arguments = Bundle().apply {
+            putInt(HomeFragment.ARG_SECTION_NUMBER, position + 1)
+        }
+        return fragment
+    }
+ 
+    override fun getItemCount(): Int {
+        return 3
+    }
+}
+```
+
+4. Kemudian pada **MainActivity** tambahkan lagi satu value untuk judul tab ketiga seperti berikut:
+
+```kotlin
+companion object {
+    @StringRes
+    private val TAB_TITLES = intArrayOf(
+            R.string.tab_text_1,
+            R.string.tab_text_2,
+            R.string.tab_text_3
+    )
+}
+```
+
+Sehingga full kode dari file **MainActivity** sebagai berikut:
+
+```kotlin
+package com.m0521074.ayuk.tablayout
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.annotation.StringRes
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import layout.SectionPagerAdapter
+
+class MainActivity : AppCompatActivity() {
+
+    companion object {
+        @StringRes
+        private val TAB_TITLES = intArrayOf(
+            R.string.tab_text_1,
+            R.string.tab_text_2,
+            R.string.tab_text_3
+        )
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val sectionsPagerAdapter = SectionPagerAdapter(this)
+        val viewPager: ViewPager2 = findViewById(R.id.view_pager)
+        viewPager.adapter = sectionsPagerAdapter
+        val tabs: TabLayout = findViewById(R.id.tabs)
+        TabLayoutMediator(tabs, viewPager) { tab, position ->
+            tab.text = resources.getString(TAB_TITLES[position])
+        }.attach()
+
+        supportActionBar?.elevation = 0f
+    }
+}
+```
+
+5. 
+
+6. 
+7. 
+8. 
