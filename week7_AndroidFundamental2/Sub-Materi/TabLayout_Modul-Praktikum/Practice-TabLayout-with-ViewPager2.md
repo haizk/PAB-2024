@@ -33,20 +33,17 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 4. Kemudian, untuk save location bisa disesuaikan sesuai dengan path pada device masing-masing. Lalu bisa pilih Finish.
 
-5. Pertama, tambahkan terlebih dahulu library ViewPager2 dan material design untuk membuat TabLayout. Silakan masuk ke build.gradle.kts(Module: app) dan tambahkan kode berikut:
-
-6. Dimulai dengan menambahkan library ViewPager2 dan material design untuk membuat TabLayout. Silahkan ke **Gradle Scripts** →  **build.gradle.kts(Module: app)** dan tambahkan kode seperpti di bawah ini.
+5. Dimulai dengan menambahkan library ViewPager2 dan material design untuk membuat TabLayout. Silahkan ke **Gradle Scripts** →  **build.gradle.kts(Module: app)** dan tambahkan kode seperpti di bawah ini.
 
 ```kotlin
 implementation("com.google.android.material:material:1.11.0") //jika belum ada
 implementation("androidx.viewpager2:viewpager2:1.0.0")
 ```
-
 ![3](assets/3.png)
 
 Jangan lupa untuk **sync project** yang berada dipojok kanan atas agar library tersebut dapat berfungsi pada projek kalian.
 
-7.  Setelah itu tambahkan *TabLayout* dan *viewPager2* ke **activity_main.xml** seperti kode di bawah ini.
+6. Setelah itu tambahkan *TabLayout* dan *viewPager2* ke **activity_main.xml** seperti kode di bawah ini.
 
 ```kotlin
 <?xml version="1.0" encoding="utf-8"?>
@@ -71,13 +68,16 @@ Jangan lupa untuk **sync project** yang berada dipojok kanan atas agar library t
 </LinearLayout>
 ```
 
-8.  Kemudian buat *fragment* baru terlebih dahulu yang akan dipakai untuk isi dari TabLayout. Caranya sama seperti sebelumnya yaitu **klik kanan pada nama package  → new → Fragment → Fragment (Blank)**.
+
+
+7.  Kemudian buat *fragment* baru terlebih dahulu yang akan dipakai untuk isi dari TabLayout. Caranya sama seperti sebelumnya yaitu **klik kanan pada nama package  → new → Fragment → Fragment (Blank)**.
 
 ![4](assets/4.png)
 
 ![5](assets/5.png)
 
-9. Selanjutnya ubah layout pada file **fragment_home.xml** menjadi seperti di bawah ini.
+8.  Selanjutnya ubah layout pada file **fragment_home.xml** menjadi seperti di bawah ini.
+
 ```kotlin
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -111,7 +111,11 @@ Jangan lupa untuk menambahkan resource teks pada **res → value → strings.xml
 ```
 
 
-10. Buat fragment sekali lagi dengan cara yang sama, yaitu **klik kanan pada nama package → new → Fragment → Fragment (Blank)**. Beri nama **ProfileFragment** dan klik Finish. Kemudian ubah layout pada **fragment_profile.xml** menjadi seperti berikut:
+9. Buat fragment sekali lagi dengan cara yang sama, yaitu **klik kanan pada nama package → new → Fragment → Fragment (Blank)**. Beri nama **ProfileFragment** dan klik Finish. Kemudian ubah layout pada **fragment_profile.xml** menjadi seperti berikut:
+
+![4](assets/4.png)
+
+![6](assets/6.png)
 
 ```kotlin
 <?xml version="1.0" encoding="utf-8"?>
@@ -131,6 +135,7 @@ Jangan lupa untuk menambahkan resource teks pada **res → value → strings.xml
 </FrameLayout>
 ```
 
+10. 
 
 11. Selanjutnya kita akan membuat kelas baru untuk mengatur ViewPager2 dan TabLayout. Caranya, **klik kanan pada nama package → new → Kotlin Class / Java Class**. Beri nama **SectionsPagerAdapter**. Pertama buat terlebih dahulu *constructor* dengan menambahkan kode berikut:
 
