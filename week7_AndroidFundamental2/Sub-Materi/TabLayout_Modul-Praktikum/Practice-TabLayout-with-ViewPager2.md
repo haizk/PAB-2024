@@ -69,7 +69,6 @@ Jangan lupa untuk **sync project** yang berada dipojok kanan atas agar library t
 ```
 
 
-
 7.  Kemudian buat *fragment* baru terlebih dahulu yang akan dipakai untuk isi dari TabLayout. Caranya sama seperti sebelumnya yaitu **klik kanan pada nama package  → new → Fragment → Fragment (Blank)**.
 
 ![4](assets/4.png)
@@ -110,10 +109,7 @@ Jangan lupa untuk menambahkan resource teks pada **res → value → strings.xml
 </resources>
 ```
 
-
 9. Buat fragment sekali lagi dengan cara yang sama, yaitu **klik kanan pada nama package → new → Fragment → Fragment (Blank)**. Beri nama **ProfileFragment** dan klik Finish. Kemudian ubah layout pada **fragment_profile.xml** menjadi seperti berikut:
-
-![4](assets/4.png)
 
 ![6](assets/6.png)
 
@@ -135,24 +131,29 @@ Jangan lupa untuk menambahkan resource teks pada **res → value → strings.xml
 </FrameLayout>
 ```
 
-10. 
+10. Selanjutnya kita akan membuat kelas baru untuk mengatur ViewPager2 dan TabLayout. Caranya, **klik kanan pada nama package → new → Kotlin Class / Java Class**. Beri nama **SectionsPagerAdapter**.
 
-11. Selanjutnya kita akan membuat kelas baru untuk mengatur ViewPager2 dan TabLayout. Caranya, **klik kanan pada nama package → new → Kotlin Class / Java Class**. Beri nama **SectionsPagerAdapter**. Pertama buat terlebih dahulu *constructor* dengan menambahkan kode berikut:
+![7](assets/7.png)
+
+![8](assets/8.png)
+
+Pertama buat terlebih dahulu *constructor* dengan menambahkan kode berikut:
 
 ```kotlin
 class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
 }
 ```
+11. Jika muncul baris merah, jangan khawatir. **Arahkan kursor** pada SectionsPagerAdapter, tekan **Alt+Enter** untuk mendapatkan suggestion, dan pilih **implement members**.
 
-12. Jika muncul baris merah, jangan khawatir. **Arahkan kursor** pada SectionsPagerAdapter, tekan **Alt+Enter** untuk mendapatkan suggestion, dan pilih **implement members**.
+![9](assets/9.png)
 
-//nyusul
+![10](assets/10.png)
 
 Kemudian pilih kedua method dan klik **OK**.
 
-//nyusul
+![11](assets/11.png)
 
-13. Selanjutnya ubah kode didalamnya, sehingga kelas **SectionPagerAdapter** secara keseluruhan menjadi seperti di bawah ini.
+12.  Selanjutnya ubah kode didalamnya, sehingga kelas **SectionPagerAdapter** secara keseluruhan menjadi seperti di bawah ini.
 
 ```kotlin
 package layout
@@ -180,7 +181,7 @@ class SectionPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(ac
 }
 ```
 
-14. Kemudian panggil kelas yang baru dibuat. Mulai dengan *setup* ViewPager2 dan TabLayout pada kelas **MainActivity** dengan kode di bawah ini.
+13.Kemudian panggil kelas yang baru dibuat. Mulai dengan *setup* ViewPager2 dan TabLayout pada kelas **MainActivity** dengan kode di bawah ini.
 
 ```kotlin
 package com.m0521074.ayuk.tablayout
@@ -220,10 +221,13 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-15. Jalankan aplikasi kalian. Dan tampilannya akan menjadi seperti di bawah ini.
+14. Jalankan aplikasi kalian. Dan tampilannya akan menjadi seperti di bawah ini.
 
 
+//nyusul
+
+15. 
 16. 
-17. c
+17. 
 18. 
 
