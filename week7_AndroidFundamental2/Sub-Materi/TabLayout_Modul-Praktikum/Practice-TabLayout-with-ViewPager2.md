@@ -27,10 +27,23 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 3. Maka, akan ditampilkan window seperti berikut ini. Untuk nama, Language, Minimum SDK, dan Build configuration language bisa mengikuti seperti pada gambar, sedangkan untuk package bisa disesuaikan dengan format berikut ini:
 
+![2](assets/2.png)
+
+**com.nim.namapertama.tablayout**
+
 4. Kemudian, untuk save location bisa disesuaikan sesuai dengan path pada device masing-masing. Lalu bisa pilih Finish.
 
+5. Pertama, tambahkan terlebih dahulu library ViewPager2 dan material design untuk membuat TabLayout. Silakan masuk ke build.gradle.kts(Module: app) dan tambahkan kode berikut:
 
-5. 
+6. Dimulai dengan menambahkan library ViewPager2 dan material design untuk membuat TabLayout. Silahkan ke **Gradle Scripts** →  **build.gradle.kts(Module: app)** dan tambahkan kode seperpti di bawah ini.
 
-6. 
+```kotlin
+implementation("com.google.android.material:material:1.11.0") //jika belum ada
+implementation("androidx.viewpager2:viewpager2:1.0.0")
+```
+
+
+7. 
+
+8. 
 
