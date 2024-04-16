@@ -67,7 +67,9 @@ Jangan lupa untuk **sync project** yang berada dipojok kanan atas agar library t
         android:layout_height="match_parent" />
 </LinearLayout>
 ```
-
+-  ***Note*** :
+  Untuk menerapkan **TabLayout**, cukup tambahkan komponen **TabLayout dan ViewPager2** di dalam layout, seperti kode di atas. ViewPager2 di sini digunakan supaya Anda dapat berpindah antar tab dengan menggunakan swipe tanpa memilih menu tab-nya. Sebenarnya ada juga versi ViewPager lama yang bisa Anda lihat di 
+[sini](https://developer.android.com/guide/navigation/navigation-swipe-view)
 
 7.  Kemudian buat *fragment* baru terlebih dahulu yang akan dipakai untuk isi dari TabLayout. Caranya sama seperti sebelumnya yaitu **klik kanan pada nama package  → new → Fragment → Fragment (Blank)**.
 
@@ -143,6 +145,10 @@ Pertama buat terlebih dahulu *constructor* dengan menambahkan kode berikut:
 class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
 }
 ```
+- ***Note*** :  Untuk mengatur ViewPager2 dan komponen yang ada di dalamnya, Anda memerlukan **SectionsPagerAdapter** yang extend ke kelas **FragmentStateAdapter**, contohnya seperti pada kode di atas. 
+
+- ***Note*** :  Base adapter yang digunakan untuk mengatur data pada ViewPager2 adalah  **FragmentStateAdapter**. Dengan extends ke abstract class ini, kalian diminta untuk mengimplementasikan 2 fungsi utama yaitu, **createFragment** dan **getItemCount**. Selain itu, di sini juga terdapat constructor yang diperlukan yaitu **AppCompatActivity** karena kita menggunakan Activity. Apabila Anda menerapkannya di Fragment, gunakan **FragmentActivity**. Sebenarnya kalian dapat menggunakan **RecyclerView.Adapter** sebagai adapter. Hal ini karena pada dasarnya ViewPager2 dibuat menggunakan RecyclerView.
+
 11. Jika muncul baris merah, jangan khawatir. **Arahkan kursor** pada SectionsPagerAdapter, tekan **Alt+Enter** untuk mendapatkan suggestion, dan pilih **implement members**.
 
 ![9](assets/9.png)
@@ -180,6 +186,9 @@ class SectionPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(ac
 
 }
 ```
+- ***Note*** :  Fungsi **getItemCount** untuk menentukan jumlah tab yang ingin ditampilkan. Pada projek kali ini yang ingin ditampilkan ada dua tab dan pastikan jumlah yang ingin ditampilkan sesuai dengan Fragment yang didefinisikan oleh fungsi **createFragment**
+- ***Note*** :  Fungsi **createFragment** untuk menampilkan fragment sesuai dengan posisi tab-nya. Misalnya kode di atas untuk posisi 0 (tab pertama) menampilkan **HomeFragment** dan di posisi 1 (tab kedua) menampilkan **ProfileFragment**. 
+
 
 13.Kemudian panggil kelas yang baru dibuat. Mulai dengan *setup* ViewPager2 dan TabLayout pada kelas **MainActivity** dengan kode di bawah ini.
 
@@ -220,6 +229,22 @@ class MainActivity : AppCompatActivity() {
     }
 }
 ```
+***Untuk menghubungkan ViewPager2 dengan TabLayout pada MainActivity***
+Perhatikan kode di bawah ini.
+
+```kotlin
+val sectionsPagerAdapter = SectionsPagerAdapter(this)
+viewPager.adapter = sectionsPagerAdapter
+```
+-  ***Note*** :  Jika dilihat kode ini mirip dengan kode yang digunakan untuk set adapter pada RecyclerView. Hal ini karena memang konsepnya sama, tetapi tampilannya saja yang berbeda. Kalian juga bisa menghubungkan ViewPager2 dengan TabLayout dengan menggunakan **TabLayoutMediator** seperti berikut:
+
+```kotlin
+TabLayoutMediator(tabs, viewPager) { tab, position ->
+    tab.text = resources.getString(TAB_TITLES[position])
+}.attach()
+```
+
+-  ***Note*** :  Dengan menerapkan TabLayoutMediator, maka Fragment yang tampil pada ViewPager2 akan sesuai dengan posisi yang dipilih pada tab. Selain itu, di sini Anda juga menentukan judul dari masing-masing Tab dengan menggunakan **TAB_TITLE** yang diambil sesuai dengan urutan posisinya.
 
 14. Jalankan aplikasi kalian. Dan tampilannya akan menjadi seperti di bawah ini.
 
