@@ -300,6 +300,16 @@ class SectionPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(ac
 }
 ```
 
+***Attention!***
+
+-  Didalam fungsi pada kode di atas parameter yang dimasukkan yang dikirimkan ke dalam Bundle sesuai dengan tipe datanya dengan format *Key-Value*, dengan **ARG_SECTION_NUMBER** yang berguna sebagai *key* dan **position+1** sebagai *value* nya. Mengapa ada +1? hal ini karena position dimulai dari 0, sedangkan Anda ingin menampilkan urutan tab yang dimulai dari 1. Kemudian **setArgument** digunakan untuk mengirimkan data bundle tersebut ke fragment.
+
+Dan kode di bawah adalah untuk mendapatkan data yang dikirimkan.
+
+```kotlin
+val index = arguments?.getInt(ARG_SECTION_NUMBER, 0)
+```
+
 4. Kemudian pada **MainActivity** tambahkan lagi satu value untuk judul tab ketiga seperti berikut:
 
 ```kotlin
@@ -358,9 +368,57 @@ class MainActivity : AppCompatActivity() {
 
 ![simulesyen_2](assets/simulesyen2.gif)
 
+ ### Mengirimkan data dari Activity ke Fragment
 
-6. 
+ Terkadang diperlukan data dari Activity untuk dikonsumsi di dalam Fragment, seperti nama tab atau variabel lainnya. Untuk caranya dengan dikirim data nya terlebih dahulu dari Activity ke SectionPagerAdapter menggunakan constructor atau setter kemudian dikirimkan lagi data tersebut ke Fragment. Contoh nya seperti kode di bawah.
 
-7. 
-8. 
-9. 
+ ```kotlin
+cclass SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
+ 
+    var appName: String = ""
+    ...
+}
+```
+
+Kemudian masukkan data yang ingin dikirimkan dari Activity:
+
+```kotlin
+val sectionsPagerAdapter = SectionsPagerAdapter(this)
+sectionsPagerAdapter.appName = resources.getString(R.string.app_name)
+```
+
+Setelah data terkirim ke adapter, maka langkah selanjutnya adalah mengirimkannya kembali ke Fragment seperti cara pada codelab. Yakni siapkan terlebih dahulu key baru pada Fragment seperti ini:
+
+```kotlin
+class HomeFragment : Fragment() {
+    ...
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        ...
+        val index = arguments?.getInt(ARG_SECTION_NUMBER, 0)
+        val name = arguments?.getString(ARG_NAME)
+        ...
+    }
+ 
+    companion object {
+        const val ARG_SECTION_NUMBER = "section_number"
+        const val ARG_NAME = "app_name"
+    }
+}
+```
+
+Kemudian kirimkan data pada SectionsPagerAdapter seperti berikut:
+
+```kotlin
+override fun createFragment(position: Int): Fragment {
+    val fragment = HomeFragment()
+    fragment.arguments = Bundle().apply {
+        putInt(HomeFragment.ARG_SECTION_NUMBER, position + 1)
+        putString(HomeFragment.ARG_NAME, appName)
+    }
+    return fragment
+}
+```
+
+Jika ingin mendalami mengenai penerapan animasi ketia ViewPAger digeser, kalian dapat belajar mandiri melalui dokumentasi di bawah ini.
+
+[PageTransformer](https://developer.android.com/develop/ui/views/animations/screen-slide-2#pagetransformer)
