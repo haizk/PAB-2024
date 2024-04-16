@@ -27,7 +27,6 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 3. Maka, akan ditampilkan window seperti berikut ini. Untuk nama, Language, Minimum SDK, dan Build configuration language bisa mengikuti seperti pada gambar, sedangkan untuk package bisa disesuaikan dengan format berikut ini:
 
-
 **com.nim.namapertama.tablayout**
 
 ![2](assets/2.png)
@@ -43,7 +42,7 @@ implementation("com.google.android.material:material:1.11.0") //jika belum ada
 implementation("androidx.viewpager2:viewpager2:1.0.0")
 ```
 
-//nyusul
+![3](assets/3.png)
 
 Jangan lupa untuk **sync project** yang berada dipojok kanan atas agar library tersebut dapat berfungsi pada projek kalian.
 
@@ -72,7 +71,154 @@ Jangan lupa untuk **sync project** yang berada dipojok kanan atas agar library t
 </LinearLayout>
 ```
 
-8.  
+8.  Kemudian buat *fragment* baru terlebih dahulu yang akan dipakai untuk isi dari TabLayout. Caranya sama seperti sebelumnya yaitu **klik kanan pada nama package  → new → Fragment → Fragment (Blank)**.
 
-9. 
+![4](assets/4.png)
+
+![5](assets/5.png)
+
+9. Selanjutnya ubah layout pada file **fragment_home.xml** menjadi seperti di bawah ini.
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+ 
+    <TextView
+        android:id="@+id/section_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/content_tab_home" />
+ 
+</FrameLayout>
+```
+Jangan lupa untuk menambahkan resource teks pada **res → value → strings.xml.** Resource ini akan dipakai sampai akhir latihan.
+
+```kotlin
+<resources>
+    <string name="app_name">MyTabLayout</string>
+    <string name="tab_text_1">Home</string>
+    <string name="tab_text_2">Profile</string>
+    <string name="tab_text_3">Setting</string>
+    <string name="content_tab_home">Welcome Home</string>
+    <string name="content_tab_profile">Change your Profile here</string>
+    <string name="content_tab_text">This is Tab %1$d</string>
+</resources>
+```
+
+
+10. Buat fragment sekali lagi dengan cara yang sama, yaitu **klik kanan pada nama package → new → Fragment → Fragment (Blank)**. Beri nama **ProfileFragment** dan klik Finish. Kemudian ubah layout pada **fragment_profile.xml** menjadi seperti berikut:
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment">
+ 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/content_tab_profile" />
+ 
+</FrameLayout>
+```
+
+
+11. Selanjutnya kita akan membuat kelas baru untuk mengatur ViewPager2 dan TabLayout. Caranya, **klik kanan pada nama package → new → Kotlin Class / Java Class**. Beri nama **SectionsPagerAdapter**. Pertama buat terlebih dahulu *constructor* dengan menambahkan kode berikut:
+
+```kotlin
+class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
+}
+```
+
+12. Jika muncul baris merah, jangan khawatir. **Arahkan kursor** pada SectionsPagerAdapter, tekan **Alt+Enter** untuk mendapatkan suggestion, dan pilih **implement members**.
+
+//nyusul
+
+Kemudian pilih kedua method dan klik **OK**.
+
+//nyusul
+
+13. Selanjutnya ubah kode didalamnya, sehingga kelas **SectionPagerAdapter** secara keseluruhan menjadi seperti di bawah ini.
+
+```kotlin
+package layout
+
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.m0521074.ayuk.tablayout.HomeFragment
+import com.m0521074.ayuk.tablayout.ProfileFragment
+
+class SectionPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
+    override fun getItemCount(): Int {
+        return 2
+    }
+
+    override fun createFragment(position: Int): Fragment {
+        var fragment: Fragment? = null
+        when (position) {
+            0 -> fragment = HomeFragment()
+            1 -> fragment = ProfileFragment()
+        }
+        return fragment as Fragment
+    }
+
+}
+```
+
+14. Kemudian panggil kelas yang baru dibuat. Mulai dengan *setup* ViewPager2 dan TabLayout pada kelas **MainActivity** dengan kode di bawah ini.
+
+```kotlin
+package com.m0521074.ayuk.tablayout
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.annotation.StringRes
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import layout.SectionPagerAdapter
+
+class MainActivity : AppCompatActivity() {
+
+    companion object {
+        @StringRes
+        private val TAB_TITLES = intArrayOf(
+            R.string.tab_text_1,
+            R.string.tab_text_2
+        )
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val sectionsPagerAdapter = SectionPagerAdapter(this)
+        val viewPager: ViewPager2 = findViewById(R.id.view_pager)
+        viewPager.adapter = sectionsPagerAdapter
+        val tabs: TabLayout = findViewById(R.id.tabs)
+        TabLayoutMediator(tabs, viewPager) { tab, position ->
+            tab.text = resources.getString(TAB_TITLES[position])
+        }.attach()
+
+        supportActionBar?.elevation = 0f
+    }
+}
+```
+
+15. Jalankan aplikasi kalian. Dan tampilannya akan menjadi seperti di bawah ini.
+
+
+16. 
+17. c
+18. 
 
