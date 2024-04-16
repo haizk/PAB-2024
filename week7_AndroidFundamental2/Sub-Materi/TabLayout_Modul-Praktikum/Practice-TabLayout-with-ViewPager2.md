@@ -354,8 +354,13 @@ class MainActivity : AppCompatActivity() {
 }
 ```
 
-5. 
+5. Sekarang jalankan kembali projek nya dan aplikasi kalian akan menjadi seperti di bawah ini.
+
+![simulesyen_2](assets/simulesyen2.gif)
+
 
 6. 
+
 7. 
 8. 
+9. 
