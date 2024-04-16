@@ -27,9 +27,10 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 3. Maka, akan ditampilkan window seperti berikut ini. Untuk nama, Language, Minimum SDK, dan Build configuration language bisa mengikuti seperti pada gambar, sedangkan untuk package bisa disesuaikan dengan format berikut ini:
 
-![2](assets/2.png)
 
 **com.nim.namapertama.tablayout**
+
+![2](assets/2.png)
 
 4. Kemudian, untuk save location bisa disesuaikan sesuai dengan path pada device masing-masing. Lalu bisa pilih Finish.
 
@@ -42,8 +43,36 @@ implementation("com.google.android.material:material:1.11.0") //jika belum ada
 implementation("androidx.viewpager2:viewpager2:1.0.0")
 ```
 
+//nyusul
 
-7. 
+Jangan lupa untuk **sync project** yang berada dipojok kanan atas agar library tersebut dapat berfungsi pada projek kalian.
 
-8. 
+7.  Setelah itu tambahkan *TabLayout* dan *viewPager2* ke **activity_main.xml** seperti kode di bawah ini.
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+ 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:tabTextColor="@android:color/white"/>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
+```
+
+8.  
+
+9. 
 
