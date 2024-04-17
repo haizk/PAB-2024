@@ -65,7 +65,7 @@ Fragment merupakan komponen view yang dapat ditambahkan (*embed*) ke dalam activ
 | Fungsi Utama | onCreate | onViewCreated |
 | Cara mengambil View | findViewById | view.findViewById |
 
-  Jadi, ketika menggunakan **this** di activity dapat diubah menjadi **requireActivit()** untuk bahasa Kotlin dan *getActvity* untuk bahasa Java. Sebagai contoh dalam penerapan pada kode nya sebagai berikut:
+  Jadi, ketika menggunakan **this** di activity dapat diubah menjadi **requireActivity()** untuk bahasa Kotlin dan *getActvity* untuk bahasa Java. Sebagai contoh dalam penerapan pada kode nya sebagai berikut:
 
 *sebelum*
 ``` kotlin
