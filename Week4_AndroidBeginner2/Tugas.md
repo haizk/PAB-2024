@@ -27,18 +27,10 @@
 -  ### Detail Laporan Praktikum
 #### Laporan berisi screenshot source code dan tampilan user interface beserta penjelasannya disertai dengan kesimpulan. 
     
-Tugas dikumpulkan dalam bentuk .ZIP dengan format nama PPAB-04_NIM_Nama.zip yang berisi file laporan (.pdf) dan source code. Berikut struktur directory yang disarankan.
+Tugas dikumpulkan dalam bentuk **.ZIP** dengan format nama **PPAB-04_NIM_Nama.zip yang berisi source code dari aplikasi** dan **.PDF dengan format nama PPAB-04_NIM_Nama.pdf yang berisi laporan praktikum**. Perlu diingat bahwa **file .zip tidak berisikan file pdf, murni berisi source code saja** dan gunakan **cara .zip sesuai yang diajarkan oleh asisten**.
 
     PPAB-XX_NIM_Nama.zip
-    ├── sourcecode
-    │   └── PPAB-XX_NIM_Nama
-    │       └── NamaProject
-    |           ├── .gradle
-    |           ├── .idea
-    |           ├── app
-    |           ├── ...
-    |           └── settings.gradle.kts
-    └── PPAB-XX_NIM_Nama.pdf
+    PPAB-XX_NIM_Nama.pdf
     
     xx = week praktikum
 
