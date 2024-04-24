@@ -40,17 +40,17 @@ object MenuRepository {
 }
 ```
 
- 2. Untuk membuat RecycleView diperlukan **persiapan Plugin** (Bagi Pengguna Android Studio Iguana & Android Studio dengan file **libs.version.toml), maka dari itu kalian dapat membuka kembali modul praktikum Week 5 sebelum membuat sebuah RecycleView.
+ 2. Untuk membuat RecycleView diperlukan **persiapan Plugin** (Bagi Pengguna Android Studio Iguana & Android Studio dengan file **libs.version.toml)dan, dalam menampilkan **RecycleView** jangan lupa membuat **Data Class** untuk menyediakan objek yang akan ditampilkan. Maka dari itu, kalian dapat **membuka kembali modul praktikum Week 5** sebelum membuat sebuah RecycleView.
 
  3. Jangan lupa untuk menambahkan **Library** untuk **ViewPager2**
 
 ```kotlin
 implementation("androidx.viewpager2:viewpager2:1.0.0")
 ```
-   Lalu, memperbarui versi dari **Library** dan sesuaikan untuk versi **compileSdk** dan **targetSdk** nya juga, agar tidak terjadi error saat mem-*build* pada aplikasi Anda.
+   Lalu, memperbarui versi dari **Library** yang lain dan sesuaikan untuk versi **compileSdk** dan **targetSdk** nya juga, agar tidak terjadi error saat mem-*build* aplikasi Anda.
 
 
-### Detail Laporan Praktikum
+## Detail Laporan Praktikum
 #### Laporan berisi screenshot source code dan tampilan user interface beserta penjelasannya disertai dengan kesimpulan. 
     
 Tugas dikumpulkan dalam bentuk **.ZIP** dengan format nama **PPAB-07_NIM_Nama.zip yang berisi source code dari aplikasi** dan **.PDF dengan format nama PPAB-07_NIM_Nama.pdf yang berisi laporan praktikum**. Perlu diingat bahwa **file .zip tidak berisikan file pdf, murni berisi source code saja** dan gunakan **cara .zip sesuai yang diajarkan oleh asisten**.
