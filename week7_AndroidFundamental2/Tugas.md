@@ -17,7 +17,7 @@
 
 
 ## Tips and Tricks
- 1. Menambahkan kelas baru berupa **Repository** dalam mengambil data. **Fungsi** dari kelas **Repository** saat menerapkan ***RecycleView***  untuk memisahkan dan mengelola sumber data yang akan digunakan. Sebagai contoh salah satu fungsi dalam kelas Repository dari simulasi di atas.
+ 1. Menambahkan kelas baru berupa **Repository** dalam mengambil data. **Fungsi** dari kelas **Repository** saat menerapkan ***RecycleView***,  untuk memisahkan dan mengelola sumber data yang akan digunakan. Sebagai contoh salah satu fungsi dalam kelas Repository dari simulasi di atas.
 ```kotlin
 object MenuRepository {
     fun getMenuList(context: Context): ArrayList<Menu> {
