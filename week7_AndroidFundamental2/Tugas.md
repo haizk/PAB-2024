@@ -15,3 +15,56 @@
 
 //nyusul
 
+
+## Tips and Tricks
+ 1. Menambahkan kelas baru berupa **Repository** dalam mengambil data. **Fungsi** dari kelas **Repository** saat menerapkan ***RecycleView***  untuk memisahkan dan mengelola sumber data yang akan digunakan. Sebagai contoh salah satu fungsi dalam kelas Repository dari simulasi di atas.
+```kotlin
+object MenuRepository {
+    fun getMenuList(context: Context): ArrayList<Menu> {
+        val resources = context.resources
+        val menuNames = resources.getStringArray(R.array.food_name)
+        val menuPrices = resources.getStringArray(R.array.food_price)
+        val menuImages = resources.obtainTypedArray(R.array.img_food)
+
+        val menuList = ArrayList<Menu>()
+        for (i in menuNames.indices) {
+            val name = menuNames[i]
+            val price = menuPrices[i].toInt()
+            val img = menuImages.getResourceId(i, 0)
+            val type = Menu.Type.FOOD
+            menuList.add(Menu(name, price, img, type))
+        }
+        menuImages.recycle()
+        return menuList
+    }
+}
+```
+
+ 2. Untuk membuat RecycleView diperlukan **persiapan Plugin**, maka dari itu kalian dapat membuka kembali modul praktikum Week 5 sebelum membuat sebuah RecycleView.
+
+  - [Modul-Praktikum-RecycleView](Week5_AndroidBeginner3/Modul-Praktikum/Practice-RecycleView.md)
+
+ 3. Jangan lupa untuk menambahkan **Library** untuk **ViewPager2**
+
+```kotlin
+implementation("androidx.viewpager2:viewpager2:1.0.0")
+```
+   Lalu, memperbarui versi dari **Library** dan sesuaikan untuk versi **compileSdk** dan **targetSdk** nya juga, agar tidak terjadi error saat mem-*build* pada aplikasi Anda.
+
+
+### Detail Laporan Praktikum
+#### Laporan berisi screenshot source code dan tampilan user interface beserta penjelasannya disertai dengan kesimpulan. 
+    
+Tugas dikumpulkan dalam bentuk **.ZIP** dengan format nama **PPAB-07_NIM_Nama.zip yang berisi source code dari aplikasi** dan **.PDF dengan format nama PPAB-07_NIM_Nama.pdf yang berisi laporan praktikum**. Perlu diingat bahwa **file .zip tidak berisikan file pdf, murni berisi source code saja** dan gunakan **cara .zip sesuai yang diajarkan oleh asisten**.
+
+    PPAB-XX_NIM_Nama.zip
+    PPAB-XX_NIM_Nama.pdf
+    
+    xx = week praktikum
+
+### Penilaian didasarkan pada: 
+
+  1. Aplikasi Bebas dari error ketika dijalankan secara normal (10%)
+  2. Relevansi source code dengan instruksi di atas (50%) 
+  3. Kompleksitas Program yang dibuat (30%)
+  4. Kreativitas masing-masing individu (10%). 
