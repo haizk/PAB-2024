@@ -40,9 +40,7 @@ object MenuRepository {
 }
 ```
 
- 2. Untuk membuat RecycleView diperlukan **persiapan Plugin**, maka dari itu kalian dapat membuka kembali modul praktikum Week 5 sebelum membuat sebuah RecycleView.
-
-  - [Modul-Praktikum-RecycleView](Modul-Praktikum/Practice-RecycleView.md)
+ 2. Untuk membuat RecycleView diperlukan **persiapan Plugin** (Bagi Pengguna Android Studio Iguana & Android Studio dengan file **libs.version.toml), maka dari itu kalian dapat membuka kembali modul praktikum Week 5 sebelum membuat sebuah RecycleView.
 
  3. Jangan lupa untuk menambahkan **Library** untuk **ViewPager2**
 
