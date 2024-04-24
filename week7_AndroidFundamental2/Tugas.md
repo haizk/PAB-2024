@@ -13,7 +13,7 @@
 
 ### Berikut Simulasi dari Kriteria Aplikasi
 
-//nyusul
+![Simulesyen](simulasi.gif)
 
 
 ## Tips and Tricks
