@@ -1,4 +1,3 @@
-<<<<<<< main
 # Tugas Praktikum PAB (Week 7)
 
 ### Buatlah sebuah aplikasi Android dengan mengimplementasikan komponen-komponen di bawah ini.
@@ -67,5 +66,3 @@ Tugas dikumpulkan dalam bentuk **.ZIP** dengan format nama **PPAB-07_NIM_Nama.zi
   2. Relevansi source code dengan instruksi di atas (50%) 
   3. Kompleksitas Program yang dibuat (30%)
   4. Kreativitas masing-masing individu (10%). 
-
->>>>>>> main
