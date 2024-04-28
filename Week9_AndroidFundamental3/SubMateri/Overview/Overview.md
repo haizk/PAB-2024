@@ -73,3 +73,8 @@ val email = dataObject.getString("email")
 Merupakan cara untuk mengambil data dari Web API. Untuk melakukannya diperlukan beberapa library, yaitu sebagai berikut:
 1. [Networking dengan library LoopJ](../LoopJ/LoopJ.md)
 2. [Networking dengan library Retrofit](../Retrofit/Retrofit.md)
+
+Berhubung materi yang telah di sampaikan di atas merupakan hal dasar, kalian dapat mengeksplorasinya sendiri (artikel di internet, buku, atau yang lainnya) untuk menambah pengetahuan dan pemahaman masing-masing.
+
+Bisa dibuka untuk wawasan lebih lanjut:
+1. [Web API](https://formatberita.com/2020/04/29/apa-itu-web-api/)
