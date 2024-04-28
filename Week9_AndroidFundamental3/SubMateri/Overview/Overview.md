@@ -5,6 +5,7 @@ Overview kali ini akan membahas secara singkat mengenai Web API, JSON, dan Netwo
 Merupakan layanan yang mengizinkan dua aplikasi saling terhubung melalui jaringan, sehingga kita dapat mengambil dan mengirim data ke layanan tersebut dengan mudah.
 
 Berikut merupakan ilustrasinya:
+
 ![Web API](asset/WebAPI.png)
 
 Dengan menggunakan layanan ini, membuat proses development menjadi lebih efisien, karena API cukup dibuat sekali, tapi dapat dikonsumsi di berbagai macam platform, seperti mobile, desktop maupun web.
