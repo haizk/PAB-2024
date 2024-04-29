@@ -49,26 +49,26 @@ Berdaarkan gambar di atas terdapat 2 hal penting pada JSON, yaitu JSONArray dan 
 Agar JSON ini dapat dipakai sesuai bahasa pemrograman yang kita pakai, maka perlu melakukan Parsing JSON. Dalam kasus ini, akan digunakan bahasa pemrograman kotlin berdasarkan dummy API yang telah disebut sebelumnya, yaitu sebagai berikut:
 - JSON Field
 Untuk method yang digunakan menyesuaikan dengan tipe data yang diambil. Misalnya ingin mengambil data “page” yang bernilai 1, berikut contoh kodenya:
-```xml
-val jsonObject = JSONObject(response)
-val page = jsonObject.getInt("page")
-```
+    ```
+    val jsonObject = JSONObject(response)
+    val page = jsonObject.getInt("page")
+    ```
 
 - JSON Array
 Untuk mengambil data yang bertanda [ ] (kurung siku), dapat menggunakan getJSONArray, berikut contoh kodenya:
-```xml
-val jsonObject = JSONObject(response)
-val dataArray = jsonObject.getJSONArray("data")
-```
+    ```
+    val jsonObject = JSONObject(response)
+    val dataArray = jsonObject.getJSONArray("data")
+    ```
 
 - JSON Object
 Untuk mengambil data yang bertanda { } (kurung kurawal), dapat menggunakan getJSONObject(index), misalnya ingin mengambil data email pada Object pertama (ke-0), berikut contoh kodenya:
-```xml
-val jsonObject = JSONObject(response);
-val dataArray = jsonObject.getJSONArray("data")
-val dataObject = dataArray.getJSONObject(0)
-val email = dataObject.getString("email")
-```
+    ```
+    val jsonObject = JSONObject(response);
+    val dataArray = jsonObject.getJSONArray("data")
+    val dataObject = dataArray.getJSONObject(0)
+    val email = dataObject.getString("email")
+    ```
 
 ## **Networking**
 Merupakan cara untuk mengambil data dari Web API. Untuk melakukannya diperlukan beberapa library, yaitu sebagai berikut:
