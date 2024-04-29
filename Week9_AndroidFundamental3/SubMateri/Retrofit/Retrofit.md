@@ -7,7 +7,7 @@ Merupakan library buatan Square yang populer digunakan untuk melakukan Networkin
         implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
     }
     ```
-Penambahan library Gson untuk melakukan parsing secara otomatis caranya hanya dengan menambahkan annotation pada class model.Selain Gson ada juga converter lain yang dapat dilihat pda tautan [ini](https://github.com/square/retrofit/wiki/Converters).
+    Penambahan library Gson untuk melakukan parsing secara otomatis caranya hanya dengan menambahkan annotation pada class model.Selain Gson ada juga converter lain yang dapat dilihat pda tautan [ini](https://github.com/square/retrofit/wiki/Converters).
 
 - Dengan menggunakan contoh dummy API pada reqres.in sebelumnya yaitu https://reqres.in/api/users?page=1. Tampilan JSON nya adalah sebagai berikut:
     ```
@@ -107,7 +107,7 @@ Penambahan library Gson untuk melakukan parsing secara otomatis caranya hanya de
     )
     ```
 
-Pada kelas model yang telah dibuat, SerializedName berfungsi untuk menandai suatu variabel untuk dimasukkan data dengan key yang sesuai dari JSON. Misalnya variabel firstName akan dimasukkan data dengan key "first_name". Pembuatan kelas model ini juga dapat dilakukan secara otomatis dengan menggunakan plugin RoboPOJOGenerator pada Android Studio.
+    Pada kelas model yang telah dibuat, SerializedName berfungsi untuk menandai suatu variabel untuk dimasukkan data dengan key yang sesuai dari JSON. Misalnya variabel firstName akan dimasukkan data dengan key "first_name". Pembuatan kelas model ini juga dapat dilakukan secara otomatis dengan menggunakan plugin RoboPOJOGenerator pada Android Studio.
 
 - Buat interface nya:
     ```
@@ -117,10 +117,10 @@ Pada kelas model yang telah dibuat, SerializedName berfungsi untuk menandai suat
     }
     ```
 
-kode di atas berdasarkan url dummy API yang telah disebutkan dengan memperhatikan ketentuan seperti berikut:
-    - Base URL : https://reqres.in/ (URL dasar yang tetap yang akan diletakkan di Api )
-    - Endpoint : api/users (bagian akhir URL yang biasanya digunakan untuk menentukan aksi)
-    - Parameter : ?page=1 (ditandai dengan awalan “?” dan pemisah antar parameter “&”)
+    kode di atas berdasarkan url dummy API yang telah disebutkan dengan memperhatikan ketentuan seperti berikut:
+        - Base URL : https://reqres.in/ (URL dasar yang tetap yang akan diletakkan di Api )
+        - Endpoint : api/users (bagian akhir URL yang biasanya digunakan untuk menentukan aksi)
+        - Parameter : ?page=1 (ditandai dengan awalan “?” dan pemisah antar parameter “&”)
 
 - Buat instance retrofit dengan menggunakan Retrofit.Builder:
     ```
@@ -130,7 +130,7 @@ kode di atas berdasarkan url dummy API yang telah disebutkan dengan memperhatika
         .build()
     val apiService = retrofit.create(ApiService::class.java)
     ```
-Pada kode di atas, converter factory berfungsi untuk menambahkan converter GSON.
+    Pada kode di atas, converter factory berfungsi untuk menambahkan converter GSON.
 
 - Eksekusi request secara asynchronous, dengan menggunakan fungsi enqueue seperti berikut:
     ```
