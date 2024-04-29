@@ -2,12 +2,12 @@
 Library ini juga disebut sebagai library AsyncHttpClient. Untuk menggunakan library ini diperlukan beberapa langkah, yaitu sebagai berikut:
 - Menggunakan gradle untuk mengintegrasikan AsyncHttpClient ke aplikasi.
 Menambahkan satu baris gradle script di bawah ini pada bagian **dependency** yang ada di **build.gradle(Module: app)**, lalu pilih **sync now**
-```xml
-dependencies {
-    ...
-    implementation 'com.loopj.android:android-async-http:1.4.9'
-}
-```
+    ```
+    dependencies {
+        ...
+        implementation 'com.loopj.android:android-async-http:1.4.9'
+    }
+    ```
 
 - Dengan menggunakan contoh dummy API pada reqres.in sebelumnya yaitu https://reqres.in/api/users?page=1. 
 
