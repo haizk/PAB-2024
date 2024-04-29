@@ -95,7 +95,7 @@
    ```
 
    Tampilannya pada activity_main.xml akan seperti ini:
-   
+
    ![alt text](asset/2.xml1.png)
 
 6. Tambahkan kode berikut pada MainActivity
@@ -218,6 +218,7 @@
    ```
 
 10. Jalankan aplikasi maka akan terlihat seperti ini:
+
     ![alt text](asset/3.apl1.png)
 
 11. Buatlah Activity baru dengan cara klik kanan pada nama package → New → Activity → Empty Views Activity. Kemudian beri nama ListBodyActivity
@@ -375,4 +376,5 @@
     ```
 
 18. Jalankan aplikasi, maka akan seperti berikut:
+
     ![alt text](asset/6.Apl_CobaLoopJ.gif)
