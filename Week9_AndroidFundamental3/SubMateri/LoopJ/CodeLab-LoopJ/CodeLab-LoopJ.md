@@ -95,6 +95,7 @@
    ```
 
    Tampilannya pada activity_main.xml akan seperti ini:
+   
    ![alt text](asset/2.xml1.png)
 
 6. Tambahkan kode berikut pada MainActivity
