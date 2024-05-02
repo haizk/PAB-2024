@@ -2,6 +2,7 @@ package com.coba.cobaretrofit.data.response
 
 import com.google.gson.annotations.SerializedName
 
+// Data class untuk menampung response dari API terkait informasi user
 data class UserResponse (
     @field:SerializedName("website")
     val website: String,
