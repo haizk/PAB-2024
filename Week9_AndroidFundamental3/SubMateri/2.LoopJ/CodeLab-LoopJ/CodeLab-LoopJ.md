@@ -2,16 +2,17 @@
 
 1. Buatlah project baru di android studio, dengan ketentuan seperti gambar berikut ini:
    ![alt text](asset/1.newproject.png)
+   
    Bisa diganti, jika ada yang perlu diganti.
 
-2. API yang akan digunakan, yaitu:
+3. API yang akan digunakan, yaitu:
 
    - https://jsonplaceholder.typicode.com/posts/1
    - https://jsonplaceholder.typicode.com/posts
 
-3. Buka url dummy public API di atas pada browser, install ekstensi JSON Formatter pada browser agar lebih mudah untuk dibaca.
+4. Buka url dummy public API di atas pada browser, install ekstensi JSON Formatter pada browser agar lebih mudah untuk dibaca.
 
-4. Tambahkan kode di bawah ini, yang merupakan library AsyncHttpClient (LoopJ), pada **build.gradle.kts(Module: app)**, lalu pilih **sync now** tunggu sampai proses sinkronisasi gradle selesai.
+5. Tambahkan kode di bawah ini, yang merupakan library AsyncHttpClient (LoopJ), pada **build.gradle.kts(Module: app)**, lalu pilih **sync now** tunggu sampai proses sinkronisasi gradle selesai.
 
    ```
    dependencies {
@@ -20,7 +21,7 @@
    }
    ```
 
-5. Buat desain aplikasi pada layout activity_main.xml seperti berikut:
+6. Buat desain aplikasi pada layout activity_main.xml seperti berikut:
 
    ```
    <?xml version="1.0" encoding="utf-8"?>
@@ -94,7 +95,7 @@
    </resources>
    ```
 
-6. Tambahkan kode berikut pada MainActivity
+7. Tambahkan kode berikut pada MainActivity
 
    ```
    class MainActivity : AppCompatActivity() {
@@ -136,7 +137,7 @@
 
    Kode tersebut adalah bagian dari konfigurasi build.gradle (Module: app) dalam proyek Android. Bagian ini mengaktifkan fitur View Binding, yang memungkinkan untuk mengikat elemen UI dalam layout XML ke dalam kelas Kotlin secara langsung, tanpa perlu menggunakan findViewById(). Dengan mengaktifkan fitur ini, dapat mengakses elemen UI dengan lebih aman dan efisien dalam kode Anda.  
 
-7. Implementasikan LoopJ untuk mengambil data dari Web API dengan menambahkan kode berikut pada MainActivity seperti berikut:
+8. Implementasikan LoopJ untuk mengambil data dari Web API dengan menambahkan kode berikut pada MainActivity seperti berikut:
 
    ```
    private fun getRandomBody() {
@@ -161,7 +162,7 @@
     4. client.get(url, object : AsyncHttpResponseHandler() { ... }) digunakan untuk melakukan permintaan GET ke URL yang telah ditentukan. Callback object : AsyncHttpResponseHandler() digunakan untuk menangani respons dari permintaan tersebut.
     5. onSuccess akan dipanggil jika permintaan berhasil, sedangkan onFailure akan dipanggil jika permintaan gagal.
 
-8. Perhatikan JSON dari url dummy API poin 7:
+9. Perhatikan JSON dari url dummy API poin 7:
 
    ```
    {
@@ -218,7 +219,7 @@
     4. responseObject.getString("body") dan responseObject.getString("title") digunakan untuk mendapatkan nilai dari atribut "body" dan "title" dalam respons JSON, kemudian menampilkannya pada komponen TextView di layout.
     5. Pada blok onFailure, progress bar juga disembunyikan dan pesan kesalahan yang sesuai dengan kode status HTTP diterima ditampilkan dalam sebuah Toast.
 
-9. Karena dalam mengambil data melalui Web API ini memerlukan internet, maka tambahkan kode permission berikut pada AndroidManifest seperti berikut:
+10. Karena dalam mengambil data melalui Web API ini memerlukan internet, maka tambahkan kode permission berikut pada AndroidManifest seperti berikut:
 
    ```
    <?xml version="1.0" encoding="utf-8"?>
@@ -233,14 +234,14 @@
    </manifest>
    ```
 
-10. Jalankan aplikasi maka akan terlihat seperti ini:
+11. Jalankan aplikasi maka akan terlihat seperti ini:
 
     ![alt text](asset/3.apl1.png)
 
-11. Buatlah Activity baru dengan cara klik kanan pada nama **package → New → Activity → Empty Views Activity**. Kemudian beri nama ListBodyActivity
+12. Buatlah Activity baru dengan cara klik kanan pada nama **package → New → Activity → Empty Views Activity**. Kemudian beri nama ListBodyActivity
     ![alt text](asset/4.newactivity.png)
 
-12. Buka activity_list_body.xml, kemudian tambahkan RecyclerView dan ProgressBar di dalamnya seperti ini:
+13. Buka activity_list_body.xml, kemudian tambahkan RecyclerView dan ProgressBar di dalamnya seperti ini:
 
     ```
     <?xml version="1.0" encoding="utf-8"?>
@@ -272,7 +273,7 @@
 
     ```
 
-13. Buatlah terlebih dahulu layout untuk item RecyclerView dengan cara **klik kanan pada folder layout → New → Layout resource file** dan beri nama item_body. Lalu buat desain seperti berikut:
+14. Buatlah terlebih dahulu layout untuk item RecyclerView dengan cara **klik kanan pada folder layout → New → Layout resource file** dan beri nama item_body. Lalu buat desain seperti berikut:
 
     ```
     <?xml version="1.0" encoding="utf-8"?>
@@ -289,7 +290,7 @@
         tools:text="Body" />
     ```
 
-14. Buat class baru untuk adapter RecyclerView dengan nama BodyAdapter dan tuliskan kode berikut:
+15. Buat class baru untuk adapter RecyclerView dengan nama BodyAdapter dan tuliskan kode berikut:
 
     ```
     class BodyAdapter(private val listReview: ArrayList<String>) : RecyclerView.Adapter<BodyAdapter.ViewHolder>() {
@@ -318,7 +319,7 @@
     4. getItemCount mengembalikan jumlah item dalam listReview, sehingga RecyclerView mengetahui berapa banyak item yang perlu ditampilkan.
     5. ViewHolder adalah kelas yang bertanggung jawab untuk menyimpan referensi ke View-view di dalam setiap item dalam RecyclerView. Pada kode di atas, ViewHolder memiliki satu properti, yaitu tvItem yang merupakan TextView untuk menampilkan data.
 
-15. Buka ListBodyActivity dan buat method getListBody untuk mengambil data list body.
+16. Buka ListBodyActivity dan buat method getListBody untuk mengambil data list body.
 
     ```
     class ListBodyActivity : AppCompatActivity() {
@@ -370,7 +371,7 @@
     3. Pada method onCreate, layout ActivityListBodyBinding di-inflate dan di-set sebagai layout dari activity. Selain itu, juga dilakukan konfigurasi layout manager untuk RecyclerView, penambahan item decoration, dan pemanggilan method getListBody untuk mengambil data list body dari Web API.
     4. getListBody adalah method yang digunakan untuk mengambil data dari Web API. Pada method ini, progress bar ditampilkan terlebih dahulu, kemudian dilakukan pengambilan data menggunakan AsyncHttpClient. Jika koneksi berhasil, progress bar disembunyikan. Jika koneksi gagal, progress bar juga disembunyikan dan ditampilkan pesan kesalahan sesuai dengan kode status HTTP yang diterima.
 
-16. Lihat kembali data JSON dummy public API yang satunya pada url https://jsonplaceholder.typicode.com/posts, berikut tampilan sebagian datanya:
+17. Lihat kembali data JSON dummy public API yang satunya pada url https://jsonplaceholder.typicode.com/posts, berikut tampilan sebagian datanya:
     ![alt text](asset/5.API2.png)
 
     Terdapat JSONArray yang berisi banyak JSON Object. Oleh karena itu, perlu melakukan perulangan untuk mendapatkan data tersebut dengan cara seperti berikut pada ListBodyActivity:
@@ -412,7 +413,7 @@
     9. val adapter = BodyAdapter(listBody) membuat adapter baru menggunakan listBody yang sudah diisi dengan data body dari Web API.
     10. binding.listBody.adapter = adapter mengatur adapter baru ke RecyclerView untuk menampilkan data body tersebut.
 
-17. Tambahkan aksi pada Button btnAllBody di MainActivity untuk navigasi ke halaman list body.
+18. Tambahkan aksi pada Button btnAllBody di MainActivity untuk navigasi ke halaman list body.
     ```
     binding.btnAllBody.setOnClickListener {
         startActivity(Intent(this@MainActivity, ListBodyActivity::class.java))
@@ -421,7 +422,7 @@
 
     Kode di atas menetapkan sebuah onClickListener pada tombol btnAllBody yang ada dalam layout MainActivity. Ketika tombol tersebut diklik, sebuah intent akan dibuat untuk memulai aktivitas ListBodyActivity. Dengan demikian, ketika tombol btnAllBody diklik, pengguna akan dialihkan ke ListBodyActivity untuk melihat daftar semua body yang ada dalam Web API.
 
-18. Jalankan aplikasi, maka akan seperti berikut:
+19. Jalankan aplikasi, maka akan seperti berikut:
 
     ![alt text](asset/6.CobaLoopJ.gif)
 
