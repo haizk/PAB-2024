@@ -312,7 +312,7 @@
 14. Jalankan aplikasi, maka akan terlihat seperti ini:
     ![alt text](asset/6.CobaRetrofit.gif)
 
-Selanjutnya dapat dilihat full kodenya di folder berikut **SourceCode/CobaRetrofit**
+Selanjutnya dapat dilihat full kodenya di folder berikut **Week9_AndroidFundamental3/SourceCode/CobaRetrofit**
 
 ## Penutup
 Berhubung materi yang telah di sampaikan di atas merupakan hal dasar, kalian dapat mengeksplorasinya sendiri (artikel di internet, buku, atau yang lainnya) untuk menambah pengetahuan dan pemahaman masing-masing.

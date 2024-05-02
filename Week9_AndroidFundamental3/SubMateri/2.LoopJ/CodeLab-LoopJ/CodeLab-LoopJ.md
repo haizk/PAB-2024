@@ -425,7 +425,7 @@
 
     ![alt text](asset/6.CobaLoopJ.gif)
 
-Selanjutnya dapat dilihat full kodenya di folder berikut **SourceCode/CobaLoopJ**
+Selanjutnya dapat dilihat full kodenya di folder berikut **Week9_AndroidFundamental3/SourceCode/CobaLoopJ**
 
 ## Penutup
 Berhubung materi yang telah di sampaikan di atas merupakan hal dasar, kalian dapat mengeksplorasinya sendiri (artikel di internet, buku, atau yang lainnya) untuk menambah pengetahuan dan pemahaman masing-masing. 
