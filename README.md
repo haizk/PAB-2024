@@ -8,7 +8,7 @@ https://developer.android.com/teach
 - Group 1: haizk
 - Group 2: adiprasetyaa
 - Group 3: nisarizqi
-- Group 4: yulia-1030
+- Group 4: tri3-3yul
 - Group 5:
 - Group 6: ningrom
 
