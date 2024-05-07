@@ -1,6 +1,10 @@
 package com.m0521030.filestorage
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.security.keystore.KeyGenParameterSpec
+import android.security.keystore.KeyProperties
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +20,16 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        var sharedPref = this.getSharedPreferences("my_reference_file", Context.MODE_PRIVATE)
+
+        val editor = sharedPref.edit()
+        editor.putInt("my_highscore_file", 80)
+        editor.commit()
+
+        var defaultValue = 0
+        var highScore = sharedPref.getInt("my_highscore_file", defaultValue)
+
+
     }
 }
