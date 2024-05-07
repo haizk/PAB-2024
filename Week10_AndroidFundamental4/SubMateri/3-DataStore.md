@@ -14,9 +14,11 @@ Proto DataStore dapat menyimpan data sebagai instance dari tipe data khusus. Ket
 
 Ketika menggunakan Proto DataStore, data menjadi lebih cepat, lebih kecil, dan lebih sederhana dibandingkan dengan format XML atau yang lainnya. Namun, secara konfigurasi, penggunaan Proto DataStore lebih rumit dibandingkan dengan Preferences DataStore karena harus mengatur schema/skema terlebih dahulu ketika menggunakan Proto DataStore. Selain itu, harus mempelajari mekanisme serialisasi baru, yakni `protocol buffer`.
 
+![Protobuf](DataStore-1Protobuf.png)
+
 Kapan kita harus menggunakan Preferences DataStore dan Proto DataStore? Jawabannya adalah kembali kepada kebutuhan masing-masing sistem. Jika Anda membutuhkan sistem penyimpanan key-values sederhana, seperti menyimpan informasi profile, pengaturan tema dark-mode, atau pengaturan sederhana lainnya, gunakanlah Preferences DataStore. Namun, jika Anda membutuhkan penyimpanan yang lebih kompleks dan cepat untuk diakses, gunakalah Protocol Buffer.
 
-Untuk melihat perbedaan antara SharedPreferences, Preferences DataStore, dan Proto DataStore, silakan lihat tabel perbandingan berikut:
+## SharedPreferences vs Preferences DataStore vs Proto DataStore
 
 | Fitur                                                           | SharedPreferences                                            | Preferences DataStore                                  | Proto DataStore                                        |
 | --------------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
@@ -34,9 +36,6 @@ Jika Anda perhatikan, DataStore dengan SharedPreferences memiliki perbedaan yang
 1. [Proto DataStore | Android Developers Android Developers](https://developer.android.com/topic/libraries/architecture/datastore#proto-datastore)
 2. [Google Protocol Buffers](https://protobuf.dev/)
 3. [Working with Proto DataStore Codelabs Android](https://developer.android.com/codelabs/android-proto-datastore#0)
-
-Implementasi Preferences DataStore
-Mari kita bahas bagaimana cara mengimplementasikan Preferences DataStore ke dalam sebuah project. API Preferences DataStore memiliki persamaan dengan SharedPreferences, tetapi terdapat beberapa perbedaan penting, seperti:
 
 ## Perbedaan Penting Preferences DataStore dengan SharedPreferences
 
