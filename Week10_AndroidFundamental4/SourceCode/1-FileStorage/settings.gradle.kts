@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "File Storage"
+rootProject.name = "MyReadWriteFile"
 include(":app")

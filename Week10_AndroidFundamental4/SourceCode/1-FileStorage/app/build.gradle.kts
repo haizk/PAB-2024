@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.m0521030.filestorage"
+    namespace = "com.m0521030.myreadwritefile"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.m0521030.filestorage"
-        minSdk = 30
+        applicationId = "com.m0521030.myreadwritefile"
+        minSdk = 29
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
