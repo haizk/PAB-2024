@@ -15,7 +15,7 @@
 
 | Field                        | Value                |
 | ---------------------------- | -------------------- |
-| Nama Project                 | MyReadWriteFile      |
+| Nama Project                 | MySharedPreferences  |
 | Templates                    | Phone and Tablet     |
 | Tipe Activity                | Empty Views Activity |
 | Language                     | Kotlin               |
