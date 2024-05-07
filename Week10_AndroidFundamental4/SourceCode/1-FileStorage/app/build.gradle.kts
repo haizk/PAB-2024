@@ -7,6 +7,10 @@ android {
     namespace = "com.m0521030.myreadwritefile"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.m0521030.myreadwritefile"
         minSdk = 29
