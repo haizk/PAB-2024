@@ -113,6 +113,23 @@ dependencies {
 
 ---
 
+**Khusus Iguana ke atas**
+
+`build.gradle.kts (module:app)`
+
+```gradle
+dependencies {
+
+    ...
+
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.jetbrains.kotlinx.coroutines.android)
+}
+```
+
 `libs.version.toml`
 
 ```toml
