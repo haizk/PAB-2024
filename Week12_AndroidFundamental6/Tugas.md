@@ -3,8 +3,8 @@
 ### Buatlah aplikasi android sederhana dengan ketentuan sebagai berikut:
 1. Mengimplementasikan ViewModel dan LiveData
 2. Buatlah 2 tampilan dengan ketentuan sebagai berikut:
-    a. Tampilan pertama merupakan kalkulator sederhana dengan fitur penjumlahan, pengurangan, perkalian, dan pembagian.
-    b. Tampilan kedua merupakan timer sederhana dengan fitur start dan stop.
+    - Tampilan pertama merupakan kalkulator sederhana dengan fitur penjumlahan, pengurangan, perkalian, dan pembagian.
+    - Tampilan kedua merupakan timer sederhana dengan fitur start dan stop.
 3. Buatlah tampilan sekreatif mungkin.
 
 ### Ketentuan Source Code Aplikasi
