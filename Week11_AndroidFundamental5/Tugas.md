@@ -1,4 +1,4 @@
-# Tugas Praktikum PAB Week 12
+# Tugas Praktikum PAB Week 11
 
 ### Buatlah aplikasi android sederhana dengan ketentuan sebagai berikut:
 1. Mengimplementasikan ViewModel dan LiveData
