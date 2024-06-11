@@ -1,0 +1,30 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id cvUser
+id main
+id rvUser
+id tvEmail
+id tvId
+id tvName
+id tvPhone
+id tvUsername
+id tvWeb
+layout activity_main
+layout item_user
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string email_user
+string id_user
+string name_user
+string phone_user
+string username_user
+string website_user
+style Base.Theme.CLRetrofit
+style Theme.CLRetrofit
+xml backup_rules
+xml data_extraction_rules

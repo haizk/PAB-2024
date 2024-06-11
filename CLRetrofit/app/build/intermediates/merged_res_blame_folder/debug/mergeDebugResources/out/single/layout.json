@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.m0521062.clretrofit.app-mergeDebugResources-30:/layout/item_user.xml",
+        "source": "com.m0521062.clretrofit.app-main-33:/layout/item_user.xml"
+    },
+    {
+        "merged": "com.m0521062.clretrofit.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "com.m0521062.clretrofit.app-main-33:/layout/activity_main.xml"
+    }
+]
