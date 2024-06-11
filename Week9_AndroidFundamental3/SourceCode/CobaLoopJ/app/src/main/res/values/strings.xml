@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CobaLoopJ</string>
+    <string name="body">Body</string>
+    <string name="title">- Title</string>
+    <string name="show_list_body">Show list of body</string>
+</resources>

@@ -66,7 +66,7 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
 ## Persiapan
 
-### Menambahkan Plugin
+### Menambahkan Plugin (Bagi Pengguna Android Studio Iguana & Android Studio dengan file `libs.version.toml`)
 
 1. Pada file `libs.version.toml`, tambahkan kode berikut pada bagian **[version]** : 
     ```kotlin
@@ -149,9 +149,32 @@ Pastikan bahwa kalian sudah menginstall Android Studio pada device kalian masing
 
     ![alt-text](assets/Menambahkan-Plugin/3.png) 
 
+### Menambahkan Plugin (Bagi Pengguna Android Studio yg tidak ada file `libs.version.toml`)
+
+1. Buka file `build.gradle` pada level module (Module: app) dan tambahkan plugin berikut.
+
+   ```
+   id("kotlin-parcelize")
+   ```
+
+   Sehingga isi _plugin_ akan menjadi seperti ini
+   
+   ```
+   plugins {
+       id("com.android.application")
+       id("org.jetbrains.kotlin.android")
+       id("kotlin-parcelize")
+   }
+   ```
+
+3. Klik `Sync Now`
+
+    Klik tombol `Sync Now` seperti pada gambar di bawah, lalu tunggu hingga selesai.
+
+    ![alt-text](assets/Menambahkan-Plugin/3.png) 
 
 ### Mendownload _asset_
-Download _asset_ yang dibutuhkan pada praktikum kali ini melalui link [berikut](https://drive.google.com/file/d/17dHYpV4_1solrpp5Z3lO_68d-1bws_g4/view?usp=sharing).
+Download _asset_ yang dibutuhkan pada praktikum kali ini melalui link [berikut](https://drive.google.com/file/d/1EPxdCJ6yt-xm_PgdPaaWzkmfDmhDmGfB/view?usp=sharing).
 
 Kemudian, _extract file_ yang telah didownload.
 
@@ -221,7 +244,6 @@ Tampilan akan menjadi seperti berikut ini
 Ubah kode pada layout XML `item_row_cat` menjadi seperti berikut : 
 
     ```xml
-    <?xml version="1.0" encoding="utf-8"?>
     <?xml version="1.0" encoding="utf-8"?>
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -768,23 +790,23 @@ Ubah kode pada layout XML `item_row_cat` menjadi seperti berikut :
 
 2. Selanjutnya buat _resource directory_ untuk menu. Klik kanan pada direktori **res → New → Android Resource Directory**.
 
-    ![alt-text](assets/Menambahkan-OnClick-Adapter/1.png)
+    ![alt-text](assets/Menambahkan-Onclick-Adapter/1.png)
 
 3. Setelah muncul dialog box seperti di bawah ini, ganti **Resource type** menjadi **menu** dan klik OK.
 
-    ![alt-text](assets/Menambahkan-OnClick-Adapter/2.png)
+    ![alt-text](assets/Menambahkan-Onclick-Adapter/2.png)
 
 4. Kemudian klik kanan pada folder menu → New → Menu Resource File.
 
-    ![alt-text](assets/Menambahkan-OnClick-Adapter/3.png)
+    ![alt-text](assets/Menambahkan-Onclick-Adapter/3.png)
 
     Pada dialog box yang muncul, beri nama file **option_menu** dan klik OK
 
-    ![alt-text](assets/Menambahkan-OnClick-Adapter/4.png)
+    ![alt-text](assets/Menambahkan-Onclick-Adapter/4.png)
 
     Tampilan file akan menjadi seperti gambar berikut : 
 
-    ![alt-text](assets/Menambahkan-OnClick-Adapter/5.png)
+    ![alt-text](assets/Menambahkan-Onclick-Adapter/5.png)
 
 5. Selanjutnya, tambahkan pilihan menu pada `option_menu.xml` seperti berikut 
 
@@ -812,7 +834,7 @@ Ubah kode pada layout XML `item_row_cat` menjadi seperti berikut :
 
 6. Setelah selesai, saatnya kita pasang menu tersebut di **MainActivity** dengan menambahkan metode fungsi `onCreateOptionsMenu`. Untuk menambahkannya, ketik `onCreateOptionMenu` di dalam **MainActivity** sehingga snippet akan muncul untuk meng-override fungsi yang sesuai.
 
-    ![alt-text](assets/Menambahkan-OnClick-Adapter/6.png)
+    ![alt-text](assets/Menambahkan-Onclick-Adapter/6.png)
 
     Tekan enter dan ubah kodenya sehingga menjadi seperti berikut : 
 
@@ -917,8 +939,12 @@ Ubah kode pada layout XML `item_row_cat` menjadi seperti berikut :
 
 Ketika menu "Grid" dijalankan, maka tampilan akan menjadi seperti ini
 
-![alt-text](assets/Menambahkan-OnClick-Adapter/7.png)
+![alt-text](assets/Menambahkan-Onclick-Adapter/7.png)
 
 **Note** : Agar _action bar_ tidak menutupi RecyclerView, kalian dapat menghapus fungsi `enableEdgeToEdge()`
 
+<<<<<<< HEAD
 ![alt-text](assets/Menambahkan-Onlick-Adapter/8.png)
+=======
+![alt-text](assets/Menambahkan-Onclick-Adapter/8.png)
+>>>>>>> b60e21a88c5039d112b6bef04fb8e16e4e8ca258

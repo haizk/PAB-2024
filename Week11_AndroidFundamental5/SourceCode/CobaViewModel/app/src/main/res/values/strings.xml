@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CobaViewModel</string>
+    <string name="volume_balok">Hitung Volume Balok</string>
+    <string name="width">Lebar</string>
+    <string name="result">Hasil</string>
+    <string name="calculate">Hitung</string>
+    <string name="height">Tinggi</string>
+    <string name="length">Panjang</string>
+</resources>

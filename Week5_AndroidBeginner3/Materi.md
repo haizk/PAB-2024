@@ -14,12 +14,12 @@ Hal ini membuat aplikasi yang menggunakan RecyclerView menjadi efisien dan lebih
 
 ### Penerapan RecyclerView
 
-![Penerapan RecyclerView](assets\penerapan_RecyclerView.png)
+![Penerapan RecyclerView](assets/penerapan_RecyclerView.png)
 
 Untuk menampilkan RecyclerView, terdapat beberapa hal yang perlu diketahui:
 1. RecyclerView : komponen ViewGroup yang perlu ditambahkan ke layout XML.
 2. LayoutManager : mengatur tata letak item pada RecyclerView. Terdapat beberapa opsi yang dapat kita pilih, yaitu :  
-![LayoutManager RecyclerView](assets\layoutManager.png) 
+![LayoutManager RecyclerView](assets/layoutManager.png) 
     - LinearLayoutManager : menampilkan satu kolom secara linear.
     - GridLayoutManager : menampilkan lebih dari satu kolom atau grid.
     - StaggeredLayoutManager : tampilan menyesuaikan tinggi setiap item.

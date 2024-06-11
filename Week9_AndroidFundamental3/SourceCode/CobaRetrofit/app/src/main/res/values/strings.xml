@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CobaRetrofit</string>
+    <string name="id_user">Id User</string>
+    <string name="name_user">Name User</string>
+    <string name="username_user">Username User</string>
+    <string name="phone_user">Phone User</string>
+    <string name="email_user">Email User</string>
+    <string name="website_user">Website User</string>
+</resources>
