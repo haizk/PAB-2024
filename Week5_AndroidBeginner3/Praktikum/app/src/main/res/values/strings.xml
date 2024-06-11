@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Meow App</string>
+    <string name="cat_name">Nama Kucing</string>
+    <string name="description">Deskripsi</string>
+
+    <string-array name="data_name">
+        <item>Kucing Domestik</item>
+        <item>Persia</item>
+        <item>British Shorthair</item>
+        <item>Ragdoll</item>
+        <item>Scottish Fold</item>
+        <item>Sphynx</item>
+        <item>Munchkin</item>
+        <item>Maine Coon</item>
+        <item>Kucing Bengal</item>
+        <item>Kucing Siam</item>
+    </string-array>
+
+    <string-array name="data_desc">
+<item><![CDATA[Kucing kampung merupakan jenis kucing peliharaan di Indonesia yang sangat mudah ditemui. Biasanya kucing ini hidup liar atau bebas di sekitar pemukiman manusia.
+
+Jenis kucing ini dapat memiliki berbagai warna bulu dan ciri-ciri fisik yang beragam.
+
+Mereka biasanya dibiarkan bebas berkeliaran di sekitar lingkungan dan mengandalkan makanan dari tempat sampah, berburu, atau sisa-sisa makanan manusia.]]></item>
+        <item><![CDATA[Kucing Persia cukup populer untuk dijadikan hewan peliharaan. Wajahnya datar dan bulunya yang panjang menjadikan kucing ini banyak disukai orang.
+
+Meski termasuk kucing ras berbulu panjang, kucing Persia tidak membutuhkan banyak perawatan khusus. Namun, karena bulunya yang panjang, Anda harus rutin menyisir rambut untuk menghindari rambut kusut dan kutu di badan mereka.
+
+Dengan penampilannya yang anggun, kucing Persia ternyata sangat suka dipeluk dan tidur di pangkuan pemiliknya.]]></item>
+        <item><![CDATA[British Shorthair memiliki karakteristik berupa warna bulu abu-abu, bulunya tebal dan pendek seperti karpet, mata bulat besar, dan ukuran berwarna sedang.
+
+Berbeda dengan jenis kucing pada umumnya, British Shorthair dikatakan hewan yang tenang dan pendiam. Mereka biasanya mudah terikat dengan pemiliknya, penyayang, dan mudah beradaptasi. Sayangnya, mereka tidak terlalu suka digendong.
+
+British Shorthair bisa rukun dengan segala jenis binatang, seperti kucing, kelinci, dan burung. Hal ini cocok bagi Anda yang suka memelihara lebih dari satu jenis binatang untuk dipelihara.]]></item>
+        <item><![CDATA[Kucing ini memiliki bulu panjang, berwarna cerah, dan kedua matanya berwarna biru. Dengan penampilan yang elegan ini mereka sangatlah clingy dan lebih suka bermain dengan manusia dibandingkan dengan sesama kucing.
+
+Ragdoll juga termasuk dalam jenis yang baik hati, patuh, kooperatif, dan bisa bermain dengan anak-anak.]]></item>
+        <item><![CDATA[Scottish Fold merupakan jenis kucing ras yang berasal dari Skotlandia. Scottish Fold memiliki ciri-ciri unik yaitu telinga yang terlipat ke depan akibat mutasi genetik. Mukanya bulat dengan bulu lembut dan tebal serta mata yang besar. Sekilas, kucing ini terlihat seperti boneka beruang.
+
+Dengan ekspresi yang manis, jenis kucing ini mudah beradaptasi dan mudah menunjukkan kasih sayang kepada pemiliknya. Kucing ini juga cukup tenang dan tidak mudah panik saat berada di lingkungan baru atau ada orang asing di dalam rumah.
+
+Scottish Fold tidak butuh perawatan yang banyak. Cukup berikan makanan bernutrisi dan kasih sayang yang berlimpah agar ia tumbuh sehat dan bahagia.]]></item>
+        <item><![CDATA[Kucing Sphynx merupakan jenis kucing yang paling unik di antara semua kucing karena tidak memiliki bulu. Kucing ini mengalami mutasi genetik yang sudah terjadi sejak lama.Kucing ini diberi nama Sphynx karena mirip dengan Sphynx, salah satu patung di Mesir.
+
+Selain tidak memiliki bulu, ciri fisik lainnya yaitu matanya berbentuk lemon, telinganya besar, dan memiliki banyak lipatan tubuh. Karakternya sangat tenang, cuek, dan sangat pendiam.
+
+Karena tidak berbulu, kucing ini memiliki perawatan khusus yaitu Anda harus sering menyeka kulitnya secara teratur.]]></item>
+        <item><![CDATA[Kucing Munchkin merupakan model kucing yang memiliki ciri-ciri fisik unik, yaitu kaki pendek atau kaki yang lebih pendek dari rata-rata kucing lainnya. Meski begitu, jenis kucing ini sangat cepat dan tangkas dalam bergerak. Ia sangat aktif berlarian ke seluruh rumah sekaligus dapat menyelinap ke sudut sempit karena badannya yang imut.
+
+Munchkin merupakan kucing yang penuh kasih sayang. Mereka tidak enggan menunjukkan rasa sayang pada pemiliknya, seperti minta dielus atau tidur dalam pangkuan pemiliknya.
+
+Jenis kucing ini juga umumnya mudah beradaptasi dan bergaul dengan orang asing. Meski kadang menunjukkan rasa takut, lama-kelamaan ia akan mudah bermain dengan manusia yang baru ditemuinya.]]></item>
+        <item><![CDATA[Maine Coon disebut sebagai ‘kucing raksasa’. Hal ini karena ukurannya yang lebih besar, tinggi, dan kuat daripada rata-rata kucing pada umumnya. Bulu kucing ini sangat lebat dengan dagu dan telinga yang runcing.
+
+Meski berukuran besar, maine coon merupakan kucing yang berkarakter lincah, manis, dan sangat ramah. Kucing ini pun sangat mudah bergaul dengan manusia maupun dengan hewan lainnya.]]></item>
+        <item><![CDATA[Jenis kucing Bengal banyak diminati karena motif di bulunya yang mirip macan tutul. Pola belang ini adalah salah satu ciri khas utama ras ini. Warna bulu Bengal bisa beragam, termasuk belang cokelat atau putih salju dengan pola belang hitam.
+
+Selain itu, karakternya begitu aktif, rasa ingin tahunya tinggi, dan sangat suka bermain.
+
+Kucing Bengal sangat mudah beradaptasi dan setia kepada pemiliknya. Ia juga tak enggan menunjukkan rasa sayang kepada pemiliknya, seperti minta dielus, tidur di pangkuan, atau minta diajak bermain.]]></item>
+        <item><![CDATA[Jenis kucing lain yang populer dijadikan hewan peliharaan yaitu kucing siam. Kucing ini sering disebut sebagai ‘pangeran kucing’ karena cara berjalannya, bentuk wajahnya, serta warna dan ketebalan bulunya.
+
+Selain itu, kucing Siam terkenal karena cerewet. Ia sering mengeong sebagai bentuk komunikasi pada manusia. Kucing Siam juga punya banyak energi sehingga Anda sebaiknya menyediakan banyak mainan untuk menghabiskan energinya. Karena cukup aktif, kucing Siam terkadang lebih banyak menghabiskan makanan kucing untuk mengisi kembali energi mereka.]]></item>
+    </string-array>
+
+    <integer-array name="data_img">
+        <item>@drawable/kucing_domestik</item>
+        <item>@drawable/persia</item>
+        <item>@drawable/bsh</item>
+        <item>@drawable/ragdoll</item>
+        <item>@drawable/scottish_fold</item>
+        <item>@drawable/sphynx</item>
+        <item>@drawable/munchkin</item>
+        <item>@drawable/maine_coon</item>
+        <item>@drawable/bengal</item>
+        <item>@drawable/siam</item>
+    </integer-array>
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">CodeLabRetrofit</string>
+    <string name="email_user">Email User</string>
+    <string name="id_user">Id User</string>
+    <string name="name_user">Name User</string>
+    <string name="phone_user">Phone User</string>
+    <string name="username_user">Username User</string>
+    <string name="website_user">Website User</string>
+    <style name="Base.Theme.CodeLabRetrofit" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.CodeLabRetrofit" parent="Base.Theme.CodeLabRetrofit"/>
+</resources>
